@@ -2,5 +2,9 @@
 # merge .Xresources file
 [[ -f $XDG_CONFIG_HOME/X11/xresources ]] && xrdb -merge $XDG_CONFIG_HOME/X11/xresources
 
+# start gnome-keyring
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
 
+# start wm
 exec i3
