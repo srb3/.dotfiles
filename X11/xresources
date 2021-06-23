@@ -2,3 +2,6 @@
 *.background: #1C1C1C
 *.cursorColor: #444444
 
+# font
+XTerm.vt100.faceName: Hack-Regular:style=Medium:size=12:antialias=true
+
