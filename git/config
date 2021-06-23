@@ -1,0 +1,9 @@
+# Global git configuration
+
+# since git uses bash shell $XDG_CONFIG_HOME is not set
+# so, use the long version of the path and update it accordingly.
+[include]
+  path=~/.config/git/git-personal.conf
+[includeIf "gitdir:~/work/"]
+  path=~/.config/git/git-work.conf
+

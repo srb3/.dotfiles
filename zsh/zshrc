@@ -1,0 +1,15 @@
+#!/bin/zsh
+
+setopt autocd
+setopt extendedglob
+unsetopt beep
+
+bindkey -v
+
+autoload -Uz compinit; compinit
+
+# startup
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+    exec startx "$XDG_CONFIG_HOME/X11/xinitrc"
+fi
+
