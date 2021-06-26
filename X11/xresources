@@ -18,8 +18,8 @@
 *.color7:     #BFBFBF
 *.color15:    #E6E6E6
 
-! *.cursorColor: #444444
+*.cursorColor: #F8F8F8 
 
 ! font
-URxvt*font: xft:Hack-Regular:style=Medium:size=12:antialias=true
+urxvt.font: xft:Hack-Regular:style=Medium:size=12:antialias=true
 
