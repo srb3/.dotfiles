@@ -2,6 +2,10 @@
 
 # Environment variables
 
+export LANG=en_US.UTF-8
+export TERM='rxvt-256color'
+export DOTFILES=$HOME/.dotfiles
+
 # X
 export XAUTHORITY=/tmp/xauthority
 

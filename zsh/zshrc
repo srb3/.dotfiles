@@ -1,12 +1,20 @@
 #!/bin/zsh
 
+# options
 setopt autocd
 setopt extendedglob
 unsetopt beep
 
+# keybindings
 bindkey -v
 
+# completion
 autoload -Uz compinit; compinit
+
+# prompt 
+fpath=($DOTFILES/zsh/prompt $fpath)
+autoload -U promptinit; promptinit
+prompt pure
 
 # startup
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then

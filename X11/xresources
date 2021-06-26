@@ -21,5 +21,5 @@
 ! *.cursorColor: #444444
 
 ! font
-XTerm.*.faceName: Hack-Regular:style=Medium:size=12:antialias=true
+URxvt*font: xft:Hack-Regular:style=Medium:size=12:antialias=true
 
