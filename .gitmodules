@@ -1,3 +1,6 @@
 [submodule "zsh/prompt"]
 	path = zsh/prompt
 	url = https://github.com/sindresorhus/pure.git
+[submodule "rofi"]
+	path = rofi
+	url = https://github.com/dracula/rofi.git
