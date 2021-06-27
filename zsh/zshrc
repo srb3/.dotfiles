@@ -9,6 +9,11 @@ unsetopt beep
 bindkey -v
 
 # completion
+zstyle ':completion:*' completer _complete _ignored _approximate
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' max-errors 2
+zstyle ':completion:*' prompt 'Corrected %e errors'
+
 autoload -Uz compinit; compinit
 
 # prompt 
