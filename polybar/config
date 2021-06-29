@@ -24,14 +24,15 @@ foreground = ${colors.foreground}
 padding-left = 0
 padding-right = 2
 
-module-margin-left = 1
-module-margin-right = 2
+;module-margin-left = 1
+module-margin-right = 1
 
 font-0 = Hack-Regular:style=Regular:size=10;2
 font-1 = Hack-Bold:style=Bold:size=10;2
 font-2 = Font Awesome 5 Free:style=Regular:size=12;3
 font-3 = Font Awesome 5 Free:style=Solid:size=12;3
 font-4 = Font Awesome 5 Brands:style=Regular:size=12;3
+font-5 = Hack-Regular:style=Regular:size=14;4
 
 modules-left = i3
 modules-center = xwindow 
@@ -80,24 +81,48 @@ label-urgent-padding = 2
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = ""
-format-prefix-foreground = ${colors.foreground}
-label = %percentage:2%%
+;format-prefix = ""
+;format-prefix-foreground = ${colors.foreground}
+;format-prefix-background = ${colors.purple}
+format = <ramp-load><label>
+label = "%percentage:2%%"
+label-padding = 1
+;label-background = ${colors.purple}
+ramp-load-0 = 
+;ramp-load-0 = %{B#ffb86c}%{F#282a36}
+ramp-load-1 = 
+ramp-load-2 = 
+ramp-load-3 = 
+ramp-load-4 = %{B#ffb86c}%{F#282a36}
+ramp-load-5 = %{B#ff5555}
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground}
-label = %percentage_used%%
-
+;format-prefix = " "  
+;format-prefix-foreground = ${colors.foreground}
+;format-prefix-background = ${colors.purple}
+label = " %percentage_used%%"
+format = <ramp-used><label>
+;label-background = ${colors.purple}
+label-padding = 1
+ramp-used-0 = 
+;ramp-used-0 = %{B#ffb86c}%{F#282a36}
+ramp-used-1 = 
+ramp-used-2 = 
+ramp-used-3 = 
+ramp-used-4 = %{B#ffb86c}%{F#282a36}
+ramp-used-5 = %{B#ff5555}
+ 
 [module/wlan]
 type = internal/network
 interface = wlp0s20f3
 interval = 3.0
 format-connected = <label-connected>
-format-connected-foreground = ${colors.foreground}
-label-connected = "%{A1:urxvt -e nmtui:} %essid%%{A}"
+label-connected = "%{A1:urxvt -e nmtui:} %{T2}%essid%%{T-}%{A}"
+label-connected-foreground = ${colors.background}
+label-connected-background = ${colors.green}
+label-connected-padding = 1
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -131,10 +156,11 @@ date-alt = " %Y-%m-%d"
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = 
-format-prefix-foreground = ${colors.foreground}
+;format-prefix = 
+;format-prefix-foreground = ${colors.foreground}
 
-label = %date% %time%
+label ="%date% %time%"
+label-padding = 1
 
 [module/battery]
 type = internal/battery
@@ -144,21 +170,28 @@ full-at = 98
 
 format-charging = <animation-charging> <label-charging>
 format-charging-prefix = " " 
-format-charging-prefix-foreground = ${colors.foreground}
-format-charging-foreground = ${colors.foreground}
-label-charging = %percentage%%
+format-charging-prefix-background = ${colors.green}
+format-charging-prefix-foreground = ${colors.background}
+label-charging = %{T2}%percentage%%%{T-}
+label-charging-foreground = ${colors.background}
+label-charging-background = ${colors.green}
+label-charging-padding = 1
 
 format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-foreground = ${colors.foreground}
+;format-discharging-foreground = ${colors.foreground}
 label-discharging = %percentage%%
+label-discharging-padding = 1
 
 format-full = <label-full>
-format-full-prefix= "" 
-format-full-prefix-foreground = ${colors.foreground}
-label-full = " %percentage%%"
+;format-full-prefix= "" 
+;format-full-prefix-foreground = ${colors.foreground}
+label-full = " %percentage%%"
+label-full-padding = 1
+;label-full-foreground = ${colors.foreground}
+label-full-background = ${colors.purple}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
+ramp-capacity-0 = %{B#ff5555}
+ramp-capacity-1 = %{B#ffb86c}%{F#282a36}
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-foreground = ${colors.foreground}
@@ -175,27 +208,45 @@ type = custom/menu
 
 expand-right = false
 
-format-spacing = 1
-
+;format-spacing = 1
 label-open = 
-label-open-foreground = ${colors.secondary}
-label-close =  cancel
-label-close-foreground = ${colors.secondary}
+label-open-foreground = ${colors.purple}
+;label-open-foreground = ${colors.foreground}
+;label-open-background= ${colors.comment}
+label-open-padding= 1
+label-close = cancel  
+label-close-foreground = ${colors.purple}
+;label-close-background= ${colors.comment}
+label-close-padding= 1
 label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
+label-separator-foreground = ${colors.foreground}
+;label-separator-background = ${colors.comment}
+label-separator-padding = 1
 
 menu-0-0 = reboot
+;menu-0-0-background = ${colors.comment}
+menu-0-0-foreground = ${colors.yellow}
 menu-0-0-exec = menu-open-1
+menu-0-0-padding = 1
 menu-0-1 = power off
+;menu-0-1-background = ${colors.comment}
+menu-0-1-foreground = ${colors.red}
 menu-0-1-exec = menu-open-2
+menu-0-1-padding = 1
 
 menu-1-0 = reboot
+menu-1-0-background = ${colors.yellow}
+menu-1-0-foreground= ${colors.background}
 menu-1-0-exec = reboot
+menu-1-0-padding = 1
 ;menu-1-1 = cancel
 ;menu-1-1-exec = menu-open-0
 
 menu-2-0 = power off
+menu-2-0-background = ${colors.red}
+menu-2-0-foreground = ${colors.foreground}
 menu-2-0-exec = shutdown now
+menu-2-0-padding = 1
 ;menu-2-1 = cancel
 ;menu-2-1-exec = menu-open-0
 
@@ -215,5 +266,6 @@ screenchange-reload = true
 
 [module/decor]
 type = custom/text
-content="%{T2}%{T-}"
-;content-background = #FFF
+content="%{T1}%{T-}"
+content-background = ${colors.background}
+content-foreground = ${colors.purple}
