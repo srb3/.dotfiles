@@ -2,6 +2,9 @@
 # default i3 config
 #-----------------------
 
+#for_window [class=*.*"] border pixel 0
+#hide_edge_borders both
+
 # changed direction keys to match vim
 # original keybinds mostly commented out.
 
@@ -197,6 +200,8 @@ bindsym $mod+r mode "resize"
 exec --no-startup-id nextcloud &
 exec_always --no-startup-id $XDG_CONFIG_HOME/polybar/launch.sh
 
+# wallpaper
+#exec --no-startup-id exec sh $XDG_CONFIG_HOME/feh/.fehbg
 
 #-----------------------
 # custom keys

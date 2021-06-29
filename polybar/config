@@ -168,11 +168,11 @@ battery = BAT0
 adapter = AC
 full-at = 98
 
-format-charging = <animation-charging> <label-charging>
-format-charging-prefix = " " 
+format-charging = <animation-charging><label-charging>
+format-charging-prefix = "  " 
 format-charging-prefix-background = ${colors.green}
 format-charging-prefix-foreground = ${colors.background}
-label-charging = %{T2}%percentage%%%{T-}
+label-charging = "%{T2}%percentage%%%{T-}"
 label-charging-foreground = ${colors.background}
 label-charging-background = ${colors.green}
 label-charging-padding = 1
@@ -200,7 +200,8 @@ animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-3 = 
-animation-charging-foreground = ${colors.foreground}
+animation-charging-background = ${colors.green}
+animation-charging-foreground = ${colors.background}
 animation-charging-framerate = 750
 
 [module/powermenu]
