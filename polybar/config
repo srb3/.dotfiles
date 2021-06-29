@@ -190,8 +190,8 @@ label-full-padding = 1
 ;label-full-foreground = ${colors.foreground}
 label-full-background = ${colors.purple}
 
-ramp-capacity-0 = %{B#ff5555}
-ramp-capacity-1 = %{B#ffb86c}%{F#282a36}
+ramp-capacity-0 = "%{B#ff5555} "
+ramp-capacity-1 = "%{B#ffb86c}%{F#282a36} "
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-foreground = ${colors.foreground}
