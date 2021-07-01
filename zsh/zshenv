@@ -5,6 +5,7 @@
 export LANG=en_US.UTF-8
 export TERM='rxvt-256color'
 export DOTFILES=$HOME/.dotfiles
+export LESSHISTFILE=$XDG_CACHE_HOME/.lesshist
 
 # X
 export XAUTHORITY=/tmp/xauthority
