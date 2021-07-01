@@ -200,8 +200,6 @@ bindsym $mod+r mode "resize"
 exec --no-startup-id nextcloud &
 exec_always --no-startup-id $XDG_CONFIG_HOME/polybar/launch.sh
 
-# wallpaper
-#exec --no-startup-id exec sh $XDG_CONFIG_HOME/feh/.fehbg
 
 #-----------------------
 # custom keys
