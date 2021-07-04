@@ -28,6 +28,9 @@ zstyle ':completion:*:*:*:*:default' list-colors ${(s.:.)LS_COLORS}
 
 autoload -Uz compinit; compinit
 
+# aliases
+source $DOTFILES/aliases/aliases
+
 # fzf
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
@@ -36,4 +39,11 @@ source /usr/share/fzf/completion.zsh
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
     exec startx "$XDG_CONFIG_HOME/X11/xinitrc"
 fi
+
+# node version manager
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 
+
+# python poetry
+export PATH="$POETRY_HOME/bin:$PATH"
 
