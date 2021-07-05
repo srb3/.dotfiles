@@ -21,11 +21,6 @@
 *.cursorColor: #F8F8F8 
 
 ! font
-urxvt.font: xft:Hack-Regular:style=Medium:size=12:antialias=true
-
-urxvt.scrollBar: false
-
-
 !xterm*cursorBlink: true
 !xterm*cursorOffTime: 300
 !xterm*cursorOnTime: 600
