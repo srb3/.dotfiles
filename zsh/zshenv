@@ -26,11 +26,13 @@ export HISTSIZE=1000
 export SAVEHIST=1000
 
 # gnupg
-export GNUPGHOME=$XDG_DATA_HOME/gnupg
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 
 # rust
-export CARGO_HOME=$XDG_DATA_HOME/.cargo
+export CARGO_HOME="$XDG_DATA_HOME/.cargo"
 
 # python
-export POETRY_HOME=$XDG_DATA_HOME/.poetry 
+export POETRY_HOME="$XDG_DATA_HOME/.poetry"
 
+# nvim
+export VIMCONFIG="$XDG_CONFIG_HOME/nvim"
