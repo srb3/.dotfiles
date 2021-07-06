@@ -6,7 +6,8 @@ return require("packer").startup {
     use "wbthomason/packer.nvim"
     
     use "neovim/nvim-lspconfig"  
-    
+    use "hrsh7th/nvim-compe"   
+
     use {
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate"
