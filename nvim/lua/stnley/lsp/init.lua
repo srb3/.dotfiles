@@ -1,3 +1,5 @@
+require "stnley.lsp.handlers"
+
 local lspconfig = require("lspconfig")
 
 local function on_attach()

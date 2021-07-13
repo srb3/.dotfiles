@@ -36,3 +36,6 @@ export POETRY_HOME="$XDG_DATA_HOME/.poetry"
 
 # nvim
 export VIMCONFIG="$XDG_CONFIG_HOME/nvim"
+
+# PATH
+export PATH="$HOME/.local/bin:$PATH"

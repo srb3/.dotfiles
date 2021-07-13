@@ -3,8 +3,8 @@ vim.g.loaded_matchparen = 1
 local opt = vim.opt
 
 opt.wildignore = "__pycache__"
-opt.wildignore = opt.wildignore + { 
-    "*.pyc", 
+opt.wildignore = opt.wildignore + {
+    "*.pyc",
     "*pycache*",
     "**/coverage/*",
     "**/node_modules/*",

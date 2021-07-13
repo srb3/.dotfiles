@@ -4,15 +4,15 @@ vim.cmd [[packadd vimball]]
 return require("packer").startup {
   function(use)
     use "wbthomason/packer.nvim"
-    
-    use "neovim/nvim-lspconfig"  
-    use "hrsh7th/nvim-compe"   
+
+    use "neovim/nvim-lspconfig"
+    use "hrsh7th/nvim-compe"
 
     use {
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate"
     }
-    
+
     use "nvim-lua/plenary.nvim"
     use "nvim-lua/popup.nvim"
     use "nvim-telescope/telescope.nvim"
@@ -27,20 +27,22 @@ return require("packer").startup {
     }
 
     use "junegunn/gv.vim"
+    use "airblade/vim-gitgutter"
     use "tpope/vim-fugitive"
     use "tpope/vim-commentary"
 
 
     use "dracula/vim"
     use "norcalli/nvim-colorizer.lua"
-    use {
-        "kyazdani42/nvim-web-devicons",
-        config = function()
-            require "nvim-web-devicons".setup {
-                default = true
-            }
-        end
-    }
+    use "kyazdani42/nvim-web-devicons"
+    -- use {
+    --     "kyazdani42/nvim-web-devicons",
+    --     config = function()
+    --         require "nvim-web-devicons".setup {
+    --             default = true
+    --         }
+    --     end
+    -- }
 
   end,
   config = {
