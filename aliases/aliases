@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Neovim
+alias vi='nvim'
+alias vim='nvim'
+
+# Lynx
+alias lynx='lynx -vikeys -accept_all_cookies'

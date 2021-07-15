@@ -3,15 +3,11 @@
 # Environment variables
 
 export LANG=en_US.UTF-8
-#export TERM='xterm-256color'
 export DOTFILES=$HOME/.dotfiles
 export LESSHISTFILE=$XDG_CACHE_HOME/.lesshist
 
 # X
 export XAUTHORITY=/tmp/xauthority
-
-# i3
-#export TERMINAL=xterm
 
 # XDG
 export XDG_CONFIG_HOME=$HOME/.config
