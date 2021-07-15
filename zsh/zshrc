@@ -5,6 +5,9 @@ setopt autocd
 setopt extendedglob
 unsetopt beep
 
+# aliases
+source $DOTFILES/aliases/aliases
+
 # prompt
 fpath=($DOTFILES/zsh/prompt $fpath)
 autoload -U promptinit; promptinit
