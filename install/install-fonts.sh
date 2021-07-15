@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mkdir -p $XDG_DATA_HOME/fonts
-cp -f $DOTFILES/fonts/* $XDG_DATA_HOME/fonts
+mkdir -p $HOME/.fonts
+cp -f $DOTFILES/fonts/* $HOME/.fonts
 fc-cache -f
 
