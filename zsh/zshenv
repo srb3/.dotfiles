@@ -6,9 +6,6 @@ export LANG=en_US.UTF-8
 export DOTFILES=$HOME/.dotfiles
 export LESSHISTFILE=$XDG_CACHE_HOME/.lesshist
 
-# X
-export XAUTHORITY=/tmp/xauthority
-
 # XDG
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$XDG_CONFIG_HOME/local/share
@@ -24,17 +21,24 @@ export HISTFILE="$ZDOTDIR/.zshitory"
 export HISTSIZE=1000
 export SAVEHIST=1000
 
-# gnupg
-export GNUPGHOME="$XDG_DATA_HOME/gnupg"
-
-# rust
-export CARGO_HOME="$XDG_DATA_HOME/.cargo"
+# golang
+export GOROOT="$XDG_DATA_HOME/go"
+export GOPATH="$HOME/personal/development/go"
+export GOBIN="$HOME/personal/development/go/bin"
+export GOCACHE="$XDG_CACHE_HOME/go-build"
 
 # python
 export POETRY_HOME="$XDG_DATA_HOME/.poetry"
+export POETRY_BIN="$POETRY_HOME/bin"
 
 # nvim
 export VIMCONFIG="$XDG_CONFIG_HOME/nvim"
 
+# nvm
+export NVM_DIR="${XDG_CONFIG_HOME}/nvm"
+
 # PATH
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$GOROOT/bin:$PATH"
+export PATH="$GOBIN:$PATH"
+export PATH="$POETRY_BIN:$PATH"
