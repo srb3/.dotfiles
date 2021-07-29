@@ -43,6 +43,7 @@ lspconfig.tsserver.setup {
 }
 
 local black = require "stnley.lsp.efm.black"
+local isort = require "stnley.lsp.efm.isort"
 local flake8 = require "stnley.lsp.efm.flake8"
 local mypy = require "stnley.lsp.efm.mypy"
 lspconfig.efm.setup {
@@ -52,7 +53,7 @@ lspconfig.efm.setup {
     settings = {
         rootMarkers = {".git/"},
         languages = {
-            python = { black, flake8, mypy }
+            python = { black, isort, flake8, mypy }
         }
     }
 }
