@@ -24,7 +24,7 @@ export SAVEHIST=1000
 # golang
 export GOROOT="$XDG_DATA_HOME/go"
 export GOPATH="$HOME/personal/development/go"
-export GOBIN="$HOME/personal/development/go/bin"
+export GOBIN="$GOPATH/bin"
 export GOCACHE="$XDG_CACHE_HOME/go-build"
 
 # rust

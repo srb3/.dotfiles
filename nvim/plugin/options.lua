@@ -40,4 +40,3 @@ opt.undofile = true
 opt.swapfile = false
 
 opt.mouse = "n"
-opt.clipboard = "unnamedplus"
