@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 mkdir -p $XDG_CONFIG_HOME/i3
 
