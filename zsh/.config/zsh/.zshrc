@@ -9,7 +9,7 @@ unsetopt beep
 source $DOTFILES/aliases/aliases
 
 # prompt
-fpath=($DOTFILES/zsh/prompt $fpath)
+fpath=($ZDOTDIR/prompt $fpath)
 autoload -U promptinit; promptinit
 zstyle :prompt:pure:prompt:success color green
 prompt pure
@@ -29,7 +29,7 @@ zstyle ':completion:*:*:*:*:messages' format '%F{purple}-- %d --%f'
 zstyle ':completion:*:*:*:*:warnings' format '%F{red}-- no matches found --%f'
 zstyle ':completion:*:*:*:*:default' list-colors ${(s.:.)LS_COLORS}
 
-autoload -Uz compinit; compinit
+autoload -Uz compinit; compinit -d $ZCOMPFILE
 
 # fzf
 source /usr/share/doc/fzf/examples/key-bindings.zsh
