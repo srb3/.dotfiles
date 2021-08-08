@@ -1,8 +1,9 @@
 #!/bin/zsh
 
 # Environment variables
-export LANG=en_US.UTF-8
 export DOTFILES=$HOME/.dotfiles
+export STOW_FOLDERS="colorls,fonts,i3,nvim,personal,python,tmux,X11,zsh"
+export LANG=en_US.UTF-8
 export LESSHISTFILE=$XDG_CACHE_HOME/.lesshist
 
 # XDG
@@ -15,8 +16,7 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 
 # zsh
-export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
-export ZCOMPFILE="$XDG_CACHE_HOME/zsh/zcompdump"
+export ZPROMPT="$XDG_CONFIG_HOME/zsh/prompt"
 export HISTFILE="$XDG_CACHE_HOME/zsh/zhistory"
 export HISTSIZE=1000
 export SAVEHIST=1000

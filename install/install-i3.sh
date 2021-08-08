@@ -1,6 +1,0 @@
-#!/bin/zsh
-
-mkdir -p $XDG_CONFIG_HOME/i3
-
-ln -sf $DOTFILES/i3/config $XDG_CONFIG_HOME/i3/config
-
