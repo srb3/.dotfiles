@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# colorls
+alias ls='colorls'
+
 # Neovim
 alias vi='nvim'
 alias vim='nvim'
