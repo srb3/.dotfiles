@@ -35,14 +35,6 @@ return require("packer").startup {
     use "dracula/vim"
     use "norcalli/nvim-colorizer.lua"
     use "kyazdani42/nvim-web-devicons"
-    -- use {
-    --     "kyazdani42/nvim-web-devicons",
-    --     config = function()
-    --         require "nvim-web-devicons".setup {
-    --             default = true
-    --         }
-    --     end
-    -- }
 
   end,
   config = {
