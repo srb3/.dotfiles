@@ -1,8 +1,9 @@
 #!/usr/bin/env zsh
+source ./zsh/.zshenv
 pushd $DOTFILES
-for folder in $(echo $STOW_FOLDERS | sed "s/,/ /g")
+for folder in $STOW_FOLDERS
 do
     echo "CREATING $folder"
-    stow  $folder
+    stow $folder
 done
 popd
