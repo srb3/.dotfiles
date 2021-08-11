@@ -31,6 +31,11 @@ zstyle ':completion:*:*:*:*:default' list-colors ${(s.:.)LS_COLORS}
 
 autoload -Uz compinit; compinit
 
+# autosuggestions
+ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
+bindkey '^ ' autosuggest-accept
+source $XDG_CONFIG_HOME/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # fzf
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh

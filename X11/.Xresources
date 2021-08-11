@@ -1,3 +1,4 @@
+xterm*termName: xterm-256color
 ! Dracula Xresources palette
 xterm*.cursorColor: #F8F8F8
 xterm*foreground: #F8F8F2
