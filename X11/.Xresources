@@ -1,4 +1,5 @@
 xterm*termName: xterm-256color
+
 ! Dracula Xresources palette
 xterm*.cursorColor: #F8F8F8
 xterm*foreground: #F8F8F2
@@ -20,21 +21,12 @@ xterm*color14:    #9AEDFE
 xterm*color7:     #BFBFBF
 xterm*color15:    #E6E6E6
 
-! font
-!xterm*cursorBlink: true
-!xterm*cursorOffTime: 300
-!xterm*cursorOnTime: 600
 xterm*faceName: Hack Nerd Font Mono
 xterm*faceSize: 16
 
-!xterm*vt100*geometry: 80x60
-!xterm*saveLines: 16384
-!xterm*loginShell: true
-
 ! better highlighting of tokens
 xterm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
-!xterm*termName: xterm-256color
-!xterm*eightBitInput: false
+
 xterm.vt100.translations: #override \
     <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0) \n\
     Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
