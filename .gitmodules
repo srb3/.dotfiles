@@ -1,11 +1,9 @@
 [submodule "zsh/prompt"]
 	path = zsh/.config/zsh/prompt
 	url = https://github.com/sindresorhus/pure.git
-	branch = tags/v1.17.1
 [submodule "personal"]
 	path = personal
 	url = git@github.com:stnley/.dotfiles-personal.git
-	branch = main
 [submodule "zsh/.config/zsh/zsh-autosuggestions"]
 	path = zsh/.config/zsh/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
