@@ -8,6 +8,9 @@ unsetopt beep
 # aliases
 source $DOTFILES/aliases/aliases
 
+# scripts
+source $XDG_CONFIG_HOME/zsh/scripts/scripts.zsh
+
 # prompt
 fpath=($ZPROMPT $fpath)
 autoload -U promptinit; promptinit
