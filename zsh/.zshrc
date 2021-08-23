@@ -33,6 +33,7 @@ prompt pure
 # keybindings
 #-----------------------
 bindkey -v
+bindkey '^ ' autosuggest-accept
 
 
 #-----------------------
@@ -56,7 +57,6 @@ autoload -Uz compinit; compinit
 # autosuggestions
 #-----------------------
 ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
-bindkey '^ ' autosuggest-accept
 source $XDG_CONFIG_HOME/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 
