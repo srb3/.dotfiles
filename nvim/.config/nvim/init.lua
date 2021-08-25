@@ -1,5 +1,5 @@
 if require "stnley.first_load"() then
-  return
+    return
 end
 
 vim.g.mapleader = " "

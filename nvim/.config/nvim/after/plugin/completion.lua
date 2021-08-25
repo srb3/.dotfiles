@@ -37,5 +37,5 @@ if has_compe then
 
     vim.api.nvim_set_keymap("i", "<C-Space>", "compe#complete()", { silent = true, noremap = true, expr = true })
     vim.api.nvim_set_keymap("i", "<CR>", "compe#confirm('<CR>')", { silent = true, noremap = true, expr = true })
-    vim.api.nvim_set_keymap("i", "<C-e>", "compe#close('<C-e>')", { silent = true, noremap = true, expr = true })   
+    vim.api.nvim_set_keymap("i", "<C-e>", "compe#close('<C-e>')", { silent = true, noremap = true, expr = true })
 end

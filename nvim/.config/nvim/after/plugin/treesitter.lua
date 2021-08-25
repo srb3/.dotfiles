@@ -1,11 +1,11 @@
 if not pcall(require, "nvim-treesitter") then
-  return
+    return
 end
 
 require("nvim-treesitter.configs").setup {
     highlight = {
         enable = true,
         use_languagetree = false,
-        disable = {"json"},
-    },
+        disable = {"json"}
+    }
 }

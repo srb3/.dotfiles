@@ -35,19 +35,49 @@ lspconfig.tsserver.setup {
     on_attach = custom_attach
 }
 
-local black = require "stnley.lsp.efm.black"
-local isort = require "stnley.lsp.efm.isort"
-local flake8 = require "stnley.lsp.efm.flake8"
-local mypy = require "stnley.lsp.efm.mypy"
-lspconfig.efm.setup {
+local sumneko_root_path = ""
+local sumneko_binary = ""
+
+local user = vim.fn.expand("$USER")
+sumneko_root_path = "/home/" .. user .. "/personal/lua-language-server"
+sumneko_binary = sumneko_root_path .. "/bin/Linux/lua-language-server"
+lspconfig.sumneko_lua.setup {
+    on_init = custom_init,
     on_attach = custom_attach,
-    init_options = { documentFormatting = true },
-    root_dir = vim.loop.cwd,
+    cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
     settings = {
-        rootMarkers = {".git/"},
-        languages = {
-            python = { black, isort, flake8, mypy }
+        Lua = {
+            runtime = {
+                version = "LuaJIT",
+                path = vim.split(package.path, ";")
+            },
+            diagnostics = {
+                globals = {"vim"}
+            },
+            workspace = {
+                library = {
+                    [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+                    [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true
+                }
+            }
         }
     }
 }
 
+local black = require "stnley.lsp.efm.black"
+local isort = require "stnley.lsp.efm.isort"
+local flake8 = require "stnley.lsp.efm.flake8"
+local mypy = require "stnley.lsp.efm.mypy"
+local luafmt = require "stnley.lsp.efm.luafmt"
+lspconfig.efm.setup {
+    on_attach = custom_attach,
+    init_options = {documentFormatting = true},
+    root_dir = vim.loop.cwd,
+    settings = {
+        rootMarkers = {".git/"},
+        languages = {
+            python = {black, isort, flake8, mypy},
+            lua = {luafmt}
+        }
+    }
+}
