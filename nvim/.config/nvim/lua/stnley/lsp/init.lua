@@ -10,18 +10,22 @@ end
 local custom_attach = function(client)
     -- Set autocommands conditional on server_capabilities
     if client.resolved_capabilities.document_formatting then
-        vim.cmd [[augroup Format]]
-        vim.cmd [[autocmd! * <buffer>]]
-        vim.cmd [[autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting()]]
-        vim.cmd [[augroup END]]
+        vim.cmd [[
+            augroup Format
+                autocmd! * <buffer>
+                autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting()
+            augroup END
+        ]]
     end
 
     if client.resolved_capabilities.document_highlight then
-        vim.cmd [[augroup lsp_document_highlight]]
-        vim.cmd [[autocmd! * <buffer>]]
-        vim.cmd [[autocmd CursorHold <buffer> :lua vim.lsp.buf.document_highlight()]]
-        vim.cmd [[autocmd CursorMoved <buffer> :lua vim.lsp.buf.clear_references()]]
-        vim.cmd [[augroup END]]
+        vim.cmd [[
+            augroup lsp_document_highlight
+                autocmd! * <buffer>
+                autocmd CursorHold <buffer> :lua vim.lsp.buf.document_highlight()
+                autocmd CursorMoved <buffer> :lua vim.lsp.buf.clear_references()
+            augroup END
+        ]]
     end
 end
 

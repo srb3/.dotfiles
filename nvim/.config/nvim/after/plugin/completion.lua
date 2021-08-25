@@ -1,5 +1,3 @@
-vim.opt.completeopt = { "menuone", "noselect" }
-
 local has_compe, compe = pcall(require, "compe")
 if has_compe then
     compe.setup {
@@ -34,6 +32,7 @@ if has_compe then
             luasnip = true,
         },
     }
+    vim.opt.completeopt = { "menuone", "noselect" }
 
     vim.api.nvim_set_keymap("i", "<C-Space>", "compe#complete()", { silent = true, noremap = true, expr = true })
     vim.api.nvim_set_keymap("i", "<CR>", "compe#confirm('<CR>')", { silent = true, noremap = true, expr = true })
