@@ -7,7 +7,7 @@ end
 
 vim.api.nvim_command('packadd packer.nvim')
 
-local no_errors = pcall(function()
+local no_errors, error_msg = pcall(function()
 
   local time
   local profile_info
@@ -44,8 +44,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/michael/.config/cache/nvim/packer_hererocks/2.0.5/share/lua/5.1/?.lua;/home/michael/.config/cache/nvim/packer_hererocks/2.0.5/share/lua/5.1/?/init.lua;/home/michael/.config/cache/nvim/packer_hererocks/2.0.5/lib/luarocks/rocks-5.1/?.lua;/home/michael/.config/cache/nvim/packer_hererocks/2.0.5/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/michael/.config/cache/nvim/packer_hererocks/2.0.5/lib/lua/5.1/?.so"
+local package_path_str = "/home/michael/.config/cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/michael/.config/cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/michael/.config/cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/michael/.config/cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/michael/.config/cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -69,25 +69,82 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  fzf = {
+    loaded = true,
+    path = "/home/michael/.config/local/share/nvim/site/pack/packer/start/fzf"
+  },
+  ["fzf.vim"] = {
+    config = { "\27LJ\2\n2\0\0\2\0\3\0\0056\0\0\0009\0\1\0+\1\2\0=\1\2\0K\0\1\0\21fzf_buffers_jump\6g\bvim\0" },
+    loaded = true,
+    path = "/home/michael/.config/local/share/nvim/site/pack/packer/start/fzf.vim"
+  },
+  ["gv.vim"] = {
+    loaded = true,
+    path = "/home/michael/.config/local/share/nvim/site/pack/packer/start/gv.vim"
+  },
+  ["nvim-colorizer.lua"] = {
+    loaded = true,
+    path = "/home/michael/.config/local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
+  },
+  ["nvim-compe"] = {
+    loaded = true,
+    path = "/home/michael/.config/local/share/nvim/site/pack/packer/start/nvim-compe"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/michael/.config/local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+  },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/michael/.config/local/share/nvim/site/pack/packer/start/nvim-treesitter"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/home/michael/.config/local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/michael/.config/local/share/nvim/site/pack/packer/start/packer.nvim"
   },
+  ["plenary.nvim"] = {
+    loaded = true,
+    path = "/home/michael/.config/local/share/nvim/site/pack/packer/start/plenary.nvim"
+  },
+  ["popup.nvim"] = {
+    loaded = true,
+    path = "/home/michael/.config/local/share/nvim/site/pack/packer/start/popup.nvim"
+  },
+  ["telescope.nvim"] = {
+    loaded = true,
+    path = "/home/michael/.config/local/share/nvim/site/pack/packer/start/telescope.nvim"
+  },
   vim = {
     loaded = true,
     path = "/home/michael/.config/local/share/nvim/site/pack/packer/start/vim"
+  },
+  ["vim-commentary"] = {
+    loaded = true,
+    path = "/home/michael/.config/local/share/nvim/site/pack/packer/start/vim-commentary"
+  },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "/home/michael/.config/local/share/nvim/site/pack/packer/start/vim-fugitive"
+  },
+  ["vim-gitgutter"] = {
+    loaded = true,
+    path = "/home/michael/.config/local/share/nvim/site/pack/packer/start/vim-gitgutter"
   }
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: fzf.vim
+time([[Config for fzf.vim]], true)
+try_loadstring("\27LJ\2\n2\0\0\2\0\3\0\0056\0\0\0009\0\1\0+\1\2\0=\1\2\0K\0\1\0\21fzf_buffers_jump\6g\bvim\0", "config", "fzf.vim")
+time([[Config for fzf.vim]], false)
 if should_profile then save_profiles() end
 
 end)
 
 if not no_errors then
-  vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: ".v:exception | echom "Please check your config for correctness" | echohl None')
+  vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: '..error_msg..'" | echom "Please check your config for correctness" | echohl None')
 end
