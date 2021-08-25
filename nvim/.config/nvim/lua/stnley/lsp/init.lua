@@ -35,12 +35,9 @@ lspconfig.tsserver.setup {
     on_attach = custom_attach
 }
 
-local sumneko_root_path = ""
-local sumneko_binary = ""
-
 local user = vim.fn.expand("$USER")
-sumneko_root_path = "/home/" .. user .. "/personal/lua-language-server"
-sumneko_binary = sumneko_root_path .. "/bin/Linux/lua-language-server"
+local sumneko_root_path = "/home/" .. user .. "/personal/lua-language-server"
+local sumneko_binary = sumneko_root_path .. "/bin/Linux/lua-language-server"
 lspconfig.sumneko_lua.setup {
     on_init = custom_init,
     on_attach = custom_attach,
