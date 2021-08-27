@@ -77,7 +77,7 @@ return require("packer").startup {
             event = "BufRead",
             config = function()
                 require("colorizer").setup()
-                vim.cmd [[:ColorizerAttachToBuffer]]
+                vim.cmd [[ColorizerAttachToBuffer]]
             end
         }
     end,
