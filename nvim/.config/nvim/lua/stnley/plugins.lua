@@ -1,4 +1,5 @@
 vim.cmd [[packadd packer.nvim]]
+-- vim.cmd [[packadd vimball]]
 
 return require("packer").startup {
     function(use)
@@ -27,14 +28,33 @@ return require("packer").startup {
             }
         }
 
+        -- use {
+        --     "nvim-treesitter/nvim-treesitter",
+        --     run = ":TSUpdate",
+        --     event = "BufRead",
+        --     config = function()
+        --         require "stnley.config.treesitter"
+        --     end
+        -- }
+        -- use {
+        --     "nvim-lua/plenary.nvim",
+        --     module = "plenary"
+        -- }
+        -- use {
+        --     "nvim-lua/popup.nvim",
+        --     module = "popup"
+
+    -- }
         use {
             {
                 "nvim-telescope/telescope.nvim",
                 requires = {
                     {
                         "nvim-lua/plenary.nvim",
-                        module_pattern = "plenary.*"
-                    }
+                        module = "plenary",
+                        module_pattern = "plenary.*",
+                    },
+                    -- {"nvim-lua/popup.nvim"},
                 },
                 config = function()
                     require "stnley.config.telescope"
@@ -42,6 +62,7 @@ return require("packer").startup {
             },
             {
                 "junegunn/fzf.vim",
+                -- module = "fzf",
                 after = "telescope.nvim",
                 requires = {
                     {"junegunn/fzf"}
@@ -49,9 +70,18 @@ return require("packer").startup {
                 config = function()
                     vim.g.fzf_buffers_jump = true
                 end
-            }
-        }
+        }}
 
+        -- use {
+        --     "junegunn/fzf.vim",
+        --     -- module = "fzf",
+        --     requires = {
+        --         {"junegunn/fzf"}
+        --     },
+        --     config = function()
+        --         vim.g.fzf_buffers_jump = true
+        --     end
+        -- }
         -- use "junegunn/gv.vim"
         use "airblade/vim-gitgutter"
         use "tpope/vim-fugitive"
