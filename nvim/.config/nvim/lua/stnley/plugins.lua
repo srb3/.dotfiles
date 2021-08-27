@@ -54,12 +54,32 @@ return require("packer").startup {
         }
 
         -- use "junegunn/gv.vim"
-        use "airblade/vim-gitgutter"
-        use "tpope/vim-fugitive"
-        use "tpope/vim-commentary"
+        use {
+            "airblade/vim-gitgutter",
+            event = "BufRead"
+        }
+
+        use {
+            "tpope/vim-fugitive",
+            cmd = {"Git", "Gstatus", "Gblame", "Gpush", "Gpull"}
+        }
+
+        use {
+            "tpope/vim-commentary",
+            event = "BufRead"
+        }
 
         use "dracula/vim"
-        use "norcalli/nvim-colorizer.lua"
+
+        use {
+            "norcalli/nvim-colorizer.lua",
+            event = "BufRead",
+            config = function()
+                require("colorizer").setup()
+                vim.cmd [[:ColorizerAttachToBuffer]]
+            end
+        }
+
         use "kyazdani42/nvim-web-devicons"
     end,
     config = {
