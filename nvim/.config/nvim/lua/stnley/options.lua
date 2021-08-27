@@ -1,15 +1,15 @@
-vim.g.loaded_matchparen = 1
-
 local opt = vim.opt
 
 opt.wildignore = "__pycache__"
-opt.wildignore = opt.wildignore + {
-    "*.pyc",
-    "*pycache*",
-    "**/coverage/*",
-    "**/node_modules/*",
-    "**/.git/*"
-}
+opt.wildignore =
+    opt.wildignore +
+    {
+        "*.pyc",
+        "*pycache*",
+        "**/coverage/*",
+        "**/node_modules/*",
+        "**/.git/*"
+    }
 
 opt.guicursor = ""
 opt.hidden = true
@@ -41,14 +41,18 @@ opt.swapfile = false
 
 opt.mouse = "n"
 
-vim.cmd[[
+vim.g.netrw_banner = 0
+vim.g.netrw_browse_split = 0
+vim.g.netrw_winsize = 25
+
+vim.cmd [[
     augroup highlight_yank
         autocmd!
         autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 40})
     augroup END
 ]]
 
-vim.cmd[[
+vim.cmd [[
     augroup remove_whitespace
         autocmd BufWritePre * %s/\s\+$//e
         autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require'lsp_extensions'.inlay_hints{}

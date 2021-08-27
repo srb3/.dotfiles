@@ -4,7 +4,7 @@ end
 
 vim.g.mapleader = " "
 
+require "stnley.options"
+require "stnley.keymaps"
 require "stnley.plugins"
 vim.cmd [[colorscheme dracula]]
-
-require "stnley.lsp"

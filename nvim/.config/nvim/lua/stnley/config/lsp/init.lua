@@ -1,4 +1,4 @@
-require "stnley.lsp.handlers"
+require "stnley.config.lsp.handlers"
 
 local lspconfig = require("lspconfig")
 
@@ -65,11 +65,14 @@ lspconfig.sumneko_lua.setup {
     }
 }
 
-local black = require "stnley.lsp.efm.black"
-local isort = require "stnley.lsp.efm.isort"
-local flake8 = require "stnley.lsp.efm.flake8"
-local mypy = require "stnley.lsp.efm.mypy"
-local luafmt = require "stnley.lsp.efm.luafmt"
+------------------------
+-- formatters/linters
+------------------------
+local black = require "stnley.config.lsp.efm.black"
+local isort = require "stnley.config.lsp.efm.isort"
+local flake8 = require "stnley.config.lsp.efm.flake8"
+local mypy = require "stnley.config.lsp.efm.mypy"
+local luafmt = require "stnley.config.lsp.efm.luafmt"
 lspconfig.efm.setup {
     on_attach = custom_attach,
     init_options = {documentFormatting = true},
