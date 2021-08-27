@@ -70,6 +70,7 @@ return require("packer").startup {
         }
 
         use "dracula/vim"
+        use "kyazdani42/nvim-web-devicons"
 
         use {
             "norcalli/nvim-colorizer.lua",
@@ -79,8 +80,6 @@ return require("packer").startup {
                 vim.cmd [[:ColorizerAttachToBuffer]]
             end
         }
-
-        use "kyazdani42/nvim-web-devicons"
     end,
     config = {
         display = {}
