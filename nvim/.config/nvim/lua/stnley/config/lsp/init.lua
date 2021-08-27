@@ -65,9 +65,6 @@ lspconfig.sumneko_lua.setup {
     }
 }
 
-------------------------
--- formatters/linters
-------------------------
 local black = require "stnley.config.lsp.efm.black"
 local isort = require "stnley.config.lsp.efm.isort"
 local flake8 = require "stnley.config.lsp.efm.flake8"
