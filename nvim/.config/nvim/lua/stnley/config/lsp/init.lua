@@ -82,7 +82,6 @@ lspconfig.efm.setup {
     rootMarkers = { ".git/", "stylua.toml" },
     languages = {
       python = { black, isort, flake8, mypy },
-      -- lua = {luafmt}
       lua = { stylua },
     },
   },
