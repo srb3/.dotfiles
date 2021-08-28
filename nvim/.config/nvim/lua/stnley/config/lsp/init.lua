@@ -69,7 +69,6 @@ local black = require "stnley.config.lsp.efm.black"
 local isort = require "stnley.config.lsp.efm.isort"
 local flake8 = require "stnley.config.lsp.efm.flake8"
 local mypy = require "stnley.config.lsp.efm.mypy"
-local luafmt = require "stnley.config.lsp.efm.luafmt"
 local stylua = require "stnley.config.lsp.efm.stylua"
 lspconfig.efm.setup {
   on_attach = custom_attach,
