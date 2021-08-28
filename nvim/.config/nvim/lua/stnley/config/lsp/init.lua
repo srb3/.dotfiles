@@ -1,6 +1,6 @@
-require 'stnley.config.lsp.handlers'
+require "stnley.config.lsp.handlers"
 
-local lspconfig = require 'lspconfig'
+local lspconfig = require "lspconfig"
 
 local custom_init = function(client)
   client.config.flags = client.config.flags or {}
@@ -39,44 +39,44 @@ lspconfig.tsserver.setup {
   on_attach = custom_attach,
 }
 
-local user = vim.fn.expand '$USER'
-local sumneko_root_path = '/home/' .. user .. '/personal/lua-language-server'
-local sumneko_binary = sumneko_root_path .. '/bin/Linux/lua-language-server'
+local user = vim.fn.expand "$USER"
+local sumneko_root_path = "/home/" .. user .. "/personal/lua-language-server"
+local sumneko_binary = sumneko_root_path .. "/bin/Linux/lua-language-server"
 lspconfig.sumneko_lua.setup {
   on_init = custom_init,
   on_attach = custom_attach,
-  cmd = { sumneko_binary, '-E', sumneko_root_path .. '/main.lua' },
+  cmd = { sumneko_binary, "-E", sumneko_root_path .. "/main.lua" },
   settings = {
     Lua = {
       runtime = {
-        version = 'LuaJIT',
-        path = vim.split(package.path, ';'),
+        version = "LuaJIT",
+        path = vim.split(package.path, ";"),
       },
       diagnostics = {
-        globals = { 'vim' },
+        globals = { "vim" },
       },
       workspace = {
         library = {
-          [vim.fn.expand '$VIMRUNTIME/lua'] = true,
-          [vim.fn.expand '$VIMRUNTIME/lua/vim/lsp'] = true,
+          [vim.fn.expand "$VIMRUNTIME/lua"] = true,
+          [vim.fn.expand "$VIMRUNTIME/lua/vim/lsp"] = true,
         },
       },
     },
   },
 }
 
-local black = require 'stnley.config.lsp.efm.black'
-local isort = require 'stnley.config.lsp.efm.isort'
-local flake8 = require 'stnley.config.lsp.efm.flake8'
-local mypy = require 'stnley.config.lsp.efm.mypy'
-local luafmt = require 'stnley.config.lsp.efm.luafmt'
-local stylua = require 'stnley.config.lsp.efm.stylua'
+local black = require "stnley.config.lsp.efm.black"
+local isort = require "stnley.config.lsp.efm.isort"
+local flake8 = require "stnley.config.lsp.efm.flake8"
+local mypy = require "stnley.config.lsp.efm.mypy"
+local luafmt = require "stnley.config.lsp.efm.luafmt"
+local stylua = require "stnley.config.lsp.efm.stylua"
 lspconfig.efm.setup {
   on_attach = custom_attach,
   init_options = { documentFormatting = true },
   root_dir = vim.loop.cwd,
   settings = {
-    rootMarkers = { '.git/' },
+    rootMarkers = { ".git/", "stylua.toml" },
     languages = {
       python = { black, isort, flake8, mypy },
       -- lua = {luafmt}
