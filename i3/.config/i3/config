@@ -2,6 +2,7 @@
 # set modifier key
 #-----------------------
 set $mod Mod1
+set $sup Mod4
 
 
 #-----------------------
@@ -152,7 +153,8 @@ exec --no-startup-id blueman-applet
 #-----------------------
 bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+Return exec xterm
-bindsym $mod+d exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu%'"
+# bindsym $mod+d exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu%'"
+bindsym $sup+space exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu%'"
 
 # audio control w media keys
 set $refresh_i3status killall -SIGUSR1 i3status
