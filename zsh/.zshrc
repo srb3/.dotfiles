@@ -33,7 +33,7 @@ prompt pure
 # keybindings
 #-----------------------
 bindkey -v
-bindkey '^ ' autosuggest-accept
+bindkey '^[[Z' autosuggest-accept
 
 
 #-----------------------
