@@ -50,10 +50,12 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
+bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
+bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
@@ -78,8 +80,8 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 bindsym $mod+f fullscreen toggle
-bindsym $mod+Shift+space floating toggle
-bindsym $mod+space focus mode_toggle
+bindsym $sup+space floating toggle
+bindsym $sup+Shift+space focus mode_toggle
 bindsym $mod+a focus parent
 
 floating_modifier $mod
@@ -147,6 +149,9 @@ exec --no-startup-id nm-applet
 exec --no-startup-id nextcloud &
 exec --no-startup-id blueman-applet
 exec --no-startup-id feh --no-fehbg --bg-center ~/.dotfiles/personal/backgrounds/flower1.jpg
+exec keepassxc
+exec spotify
+
 
 #-----------------------
 # custom keys
@@ -154,7 +159,7 @@ exec --no-startup-id feh --no-fehbg --bg-center ~/.dotfiles/personal/backgrounds
 bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+Return exec xterm
 # bindsym $mod+d exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu%'"
-bindsym $sup+space exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu%'"
+bindsym $mod+space exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu%'"
 
 # audio control w media keys
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -172,3 +177,20 @@ bindsym $mod+F9 exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ togg
 # brightness control
 bindsym XF86MonBrightnessUp exec --no-startup-id light -A 10
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10
+
+# scratchpad
+bindsym $mod+Shift+y [class="KeePassXC"] scratchpad show
+bindsym $mod+Shift+u [class="F5 VPN"] scratchpad show
+
+#-----------------------
+# application workspaces
+#-----------------------
+for_window [class="KeePassXC"] move scratchpad
+for_window [class="F5 VPN"] move scratchpad
+assign [class="Alacritty"] $ws1
+assign [class="XTerm"] $ws1
+# this doesn't swallow firefox profile selection popup
+assign [class="Firefox" instance="Navigator"] $ws2
+assign [class="Slack"] $ws3
+# spotify client is broken so must use for_window
+for_window [class="^Spotify"] move to workspace $ws10
