@@ -193,5 +193,6 @@ assign [class="XTerm"] $ws1
 # this doesn't swallow firefox profile selection popup
 assign [class="Firefox" instance="Navigator"] $ws2
 assign [class="Slack"] $ws3
+assign [class="zoom"] $ws4
 # spotify client is broken so must use for_window
 for_window [class="^Spotify"] move to workspace $ws10
