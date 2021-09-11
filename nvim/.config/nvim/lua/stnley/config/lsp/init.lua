@@ -95,12 +95,26 @@ lspconfig.sumneko_lua.setup {
   },
 }
 
+--Enable (broadcasting) snippet capability for completion
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+lspconfig.jsonls.setup {
+  on_attach = function(client)
+    client.resolved_capabilities.document_formatting = false
+    client.resolved_capabilities.document_range_formatting = false
+    custom_attach(client)
+  end,
+  capabilities = capabilities,
+}
+
 local black = require "stnley.config.lsp.efm.black"
 local isort = require "stnley.config.lsp.efm.isort"
 local flake8 = require "stnley.config.lsp.efm.flake8"
 local mypy = require "stnley.config.lsp.efm.mypy"
 local stylua = require "stnley.config.lsp.efm.stylua"
 local eslint = require "stnley.config.lsp.efm.eslint"
+local prettier = require "stnley.config.lsp.efm.prettier"
 lspconfig.efm.setup {
   on_attach = custom_attach,
   init_options = { documentFormatting = true },
@@ -114,6 +128,7 @@ lspconfig.efm.setup {
     "typescript",
     "javascriptreact",
     "typescriptreact",
+    "json",
   },
   settings = {
     rootMarkers = { ".git/", "stylua.toml" },
@@ -124,6 +139,7 @@ lspconfig.efm.setup {
       typescript = { eslint },
       typescriptreact = { eslint },
       javascriptreact = { eslint },
+      json = { prettier },
     },
   },
 }
