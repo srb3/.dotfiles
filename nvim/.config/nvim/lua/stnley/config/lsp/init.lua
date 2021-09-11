@@ -98,7 +98,6 @@ lspconfig.sumneko_lua.setup {
 --Enable (broadcasting) snippet capability for completion
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
-
 lspconfig.jsonls.setup {
   on_attach = function(client)
     client.resolved_capabilities.document_formatting = false
@@ -107,6 +106,8 @@ lspconfig.jsonls.setup {
   end,
   capabilities = capabilities,
 }
+
+lspconfig.terraformls.setup {}
 
 local black = require "stnley.config.lsp.efm.black"
 local isort = require "stnley.config.lsp.efm.isort"
