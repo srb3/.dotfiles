@@ -99,6 +99,7 @@ lspconfig.sumneko_lua.setup {
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 lspconfig.jsonls.setup {
+  on_init = custom_init,
   on_attach = function(client)
     client.resolved_capabilities.document_formatting = false
     client.resolved_capabilities.document_range_formatting = false
@@ -107,7 +108,14 @@ lspconfig.jsonls.setup {
   capabilities = capabilities,
 }
 
-lspconfig.terraformls.setup {}
+lspconfig.terraformls.setup {
+  on_init = custom_init,
+  on_attach = function(client)
+    client.resolved_capabilities.document_formatting = false
+    client.resolved_capabilities.document_range_formatting = false
+    custom_attach(client)
+  end,
+}
 
 local black = require "stnley.config.lsp.efm.black"
 local isort = require "stnley.config.lsp.efm.isort"
@@ -116,6 +124,7 @@ local mypy = require "stnley.config.lsp.efm.mypy"
 local stylua = require "stnley.config.lsp.efm.stylua"
 local eslint = require "stnley.config.lsp.efm.eslint"
 local prettier = require "stnley.config.lsp.efm.prettier"
+local terraform = require "stnley.config.lsp.efm.terraform"
 lspconfig.efm.setup {
   on_attach = custom_attach,
   init_options = { documentFormatting = true },
@@ -123,24 +132,26 @@ lspconfig.efm.setup {
   -- Specify filetypes so server attaches to buffer reliably. For details see:
   -- https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#efm
   filetypes = {
-    "python",
     "lua",
     "javascript",
-    "typescript",
     "javascriptreact",
-    "typescriptreact",
     "json",
+    "python",
+    "terraform",
+    "typescript",
+    "typescriptreact",
   },
   settings = {
     rootMarkers = { ".git/", "stylua.toml" },
     languages = {
-      python = { black, isort, flake8, mypy },
       lua = { stylua },
       javascript = { eslint },
-      typescript = { eslint },
-      typescriptreact = { eslint },
       javascriptreact = { eslint },
       json = { prettier },
+      python = { black, isort, flake8, mypy },
+      terraform = { terraform },
+      typescript = { eslint },
+      typescriptreact = { eslint },
     },
   },
 }
