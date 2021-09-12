@@ -69,6 +69,14 @@ return require("packer").startup {
       event = "BufRead",
     }
 
+    use {
+      "plasticboy/vim-markdown",
+      ft = "markdown",
+      config = function()
+        require "stnley.config.markdown"
+      end,
+    }
+
     use "dracula/vim"
     use "kyazdani42/nvim-web-devicons"
     use {
