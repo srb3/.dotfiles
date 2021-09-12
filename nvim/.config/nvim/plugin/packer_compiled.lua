@@ -80,6 +80,12 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/michael/.config/local/share/nvim/site/pack/packer/opt/fzf.vim"
   },
+  ["lualine.nvim"] = {
+    config = { "\27LJ\2\n]\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\foptions\1\0\0\1\0\1\ntheme\fdracula\nsetup\flualine\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/michael/.config/local/share/nvim/site/pack/packer/opt/lualine.nvim"
+  },
   ["nvim-colorizer.lua"] = {
     config = { "\27LJ\2\ng\0\0\3\0\6\0\n6\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\3\0009\0\4\0'\2\5\0B\0\2\1K\0\1\0\28ColorizerAttachToBuffer\bcmd\bvim\nsetup\14colorizer\frequire\0" },
     loaded = false,
@@ -201,8 +207,8 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au BufRead * ++once lua require("packer.load")({'nvim-colorizer.lua', 'vim-commentary', 'vim-gitgutter', 'lualine.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
 vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-compe'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au BufRead * ++once lua require("packer.load")({'vim-commentary', 'vim-gitgutter', 'nvim-colorizer.lua'}, { event = "BufRead *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end

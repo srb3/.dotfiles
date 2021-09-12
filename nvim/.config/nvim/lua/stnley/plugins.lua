@@ -71,6 +71,15 @@ return require("packer").startup {
 
     use "dracula/vim"
     use "kyazdani42/nvim-web-devicons"
+    use {
+      "hoob3rt/lualine.nvim",
+      event = "BufRead",
+      config = function()
+        require("lualine").setup {
+          options = { theme = "dracula" },
+        }
+      end,
+    }
 
     use {
       "norcalli/nvim-colorizer.lua",
