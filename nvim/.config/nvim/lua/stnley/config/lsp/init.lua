@@ -51,18 +51,27 @@ local custom_attach = function(client, bufnr)
   keymap("n", "<leader>gll", ":call LspLocationList()<CR>", opts)
 end
 
-lspconfig.pyright.setup {
+lspconfig.bashls.setup {
   on_init = custom_init,
   on_attach = custom_attach,
 }
 
-lspconfig.tsserver.setup {
+lspconfig.dockerls.setup {
+  on_init = custom_init,
+  on_attach = custom_attach,
+}
+
+--Enable (broadcasting) snippet capability for completion
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+lspconfig.jsonls.setup {
   on_init = custom_init,
   on_attach = function(client)
     client.resolved_capabilities.document_formatting = false
     client.resolved_capabilities.document_range_formatting = false
     custom_attach(client)
   end,
+  capabilities = capabilities,
 }
 
 local user = vim.fn.expand "$USER"
@@ -95,17 +104,9 @@ lspconfig.sumneko_lua.setup {
   },
 }
 
---Enable (broadcasting) snippet capability for completion
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-lspconfig.jsonls.setup {
+lspconfig.pyright.setup {
   on_init = custom_init,
-  on_attach = function(client)
-    client.resolved_capabilities.document_formatting = false
-    client.resolved_capabilities.document_range_formatting = false
-    custom_attach(client)
-  end,
-  capabilities = capabilities,
+  on_attach = custom_attach,
 }
 
 lspconfig.terraformls.setup {
@@ -117,13 +118,29 @@ lspconfig.terraformls.setup {
   end,
 }
 
+lspconfig.tsserver.setup {
+  on_init = custom_init,
+  on_attach = function(client)
+    client.resolved_capabilities.document_formatting = false
+    client.resolved_capabilities.document_range_formatting = false
+    custom_attach(client)
+  end,
+}
+
+lspconfig.yamlls.setup {
+  on_init = custom_init,
+  on_attach = custom_attach,
+}
+
 local black = require "stnley.config.lsp.efm.black"
-local isort = require "stnley.config.lsp.efm.isort"
-local flake8 = require "stnley.config.lsp.efm.flake8"
-local mypy = require "stnley.config.lsp.efm.mypy"
-local stylua = require "stnley.config.lsp.efm.stylua"
 local eslint = require "stnley.config.lsp.efm.eslint"
+local flake8 = require "stnley.config.lsp.efm.flake8"
+local isort = require "stnley.config.lsp.efm.isort"
+local mypy = require "stnley.config.lsp.efm.mypy"
 local prettier = require "stnley.config.lsp.efm.prettier"
+local shellcheck = require "stnley.config.lsp.efm.shellcheck"
+local shfmt = require "stnley.config.lsp.efm.shfmt"
+local stylua = require "stnley.config.lsp.efm.stylua"
 local terraform = require "stnley.config.lsp.efm.terraform"
 lspconfig.efm.setup {
   on_attach = custom_attach,
@@ -137,9 +154,11 @@ lspconfig.efm.setup {
     "javascriptreact",
     "json",
     "python",
+    "sh",
     "terraform",
     "typescript",
     "typescriptreact",
+    "yaml",
   },
   settings = {
     rootMarkers = { ".git/", "stylua.toml" },
@@ -149,9 +168,11 @@ lspconfig.efm.setup {
       javascriptreact = { eslint },
       json = { prettier },
       python = { black, isort, flake8, mypy },
+      sh = { shellcheck, shfmt },
       terraform = { terraform },
       typescript = { eslint },
       typescriptreact = { eslint },
+      yaml = { prettier },
     },
   },
 }
