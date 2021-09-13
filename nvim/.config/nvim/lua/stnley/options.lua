@@ -22,6 +22,7 @@ opt.splitbelow = true -- prefer windows split to bottom
 
 opt.colorcolumn = "80"
 opt.termguicolors = true
+opt.showmode = false
 
 opt.expandtab = true
 opt.shiftwidth = 4
