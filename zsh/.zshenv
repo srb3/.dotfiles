@@ -27,6 +27,7 @@ export VISUAL="nvim"
 #-----------------------
 # zsh
 #-----------------------
+skip_global_compinit=1
 export ZPROMPT="$XDG_CONFIG_HOME/zsh/prompt"
 export HISTFILE="$XDG_CACHE_HOME/zsh/zhistory"
 export HISTSIZE=1000
