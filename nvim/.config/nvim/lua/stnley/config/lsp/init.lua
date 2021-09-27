@@ -13,7 +13,7 @@ local custom_attach = function(client, bufnr)
     vim.cmd [[
             augroup Format
                 autocmd! * <buffer>
-                autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting()
+                autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting_sync()
             augroup END
         ]]
   end
@@ -44,7 +44,7 @@ local custom_attach = function(client, bufnr)
   keymap(
     "n",
     "<leader>sd",
-    "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics(); vim.lsp.util.show_line_diagnostics()<CR>",
+    "<cmd>lua vim.diagnostic.show_line_diagnostics(); vim.lsp.util.show_line_diagnostics()<CR>",
     opts
   )
   keymap("n", "<leader>gn", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
@@ -75,7 +75,7 @@ lspconfig.jsonls.setup {
 }
 
 local user = vim.fn.expand "$USER"
-local sumneko_root_path = "/home/" .. user .. "/personal/lua-language-server"
+local sumneko_root_path = "/home/" .. user .. "/apps/lua-language-server"
 local sumneko_binary = sumneko_root_path .. "/bin/Linux/lua-language-server"
 lspconfig.sumneko_lua.setup {
   on_init = custom_init,
