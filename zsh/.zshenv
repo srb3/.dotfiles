@@ -4,7 +4,7 @@
 # Environment variables
 #-----------------------
 export DOTFILES=$HOME/.dotfiles
-export STOW_FOLDERS=(alacritty colorls fonts i3 nvim personal python tmux X11 zsh)
+export STOW_FOLDERS=(alacritty colorls dunst fonts i3 nvim personal python tmux X11 zsh)
 export LANG=en_US.UTF-8
 export LESSHISTFILE=$XDG_CACHE_HOME/.lesshist
 
