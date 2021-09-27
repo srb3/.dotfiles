@@ -48,6 +48,7 @@ export GOCACHE="$XDG_CACHE_HOME/go-build"
 #-----------------------
 export GEM_HOME="$XDG_DATA_HOME/ruby"
 export GEM_PATH="$GEM_HOME/gems"
+export GEM_SPEC_CACHE="$XDG_CACHE_HOME/.gem"
 
 
 #-----------------------
