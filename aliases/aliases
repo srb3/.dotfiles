@@ -9,3 +9,6 @@ alias vim='nvim'
 
 # Lynx
 alias lynx='lynx -vikeys -accept_all_cookies'
+
+# wget
+alias wget="wget --hsts-file $XDG_CACHE_HOME/.wget-hsts"
