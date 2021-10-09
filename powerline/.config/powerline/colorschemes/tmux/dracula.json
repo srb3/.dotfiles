@@ -1,0 +1,58 @@
+{
+  "groups": {
+    "active_window_status": {
+      "fg": "dracula:ltpurple",
+      "bg": "dracula:current",
+      "attrs": []
+    },
+    "window_status": {
+      "fg": "gray70",
+      "bg": "dracula:current",
+      "attrs": []
+    },
+    "activity_status": {
+      "fg": "dracula:yellow",
+      "bg": "dracula:current",
+      "attrs": []
+    },
+    "bell_status": {
+      "fg": "dracula:red",
+      "bg": "dracula:current",
+      "attrs": []
+    },
+    "background": {
+      "fg": "dracula:white",
+      "bg": "dracula:current",
+      "attrs": []
+    },
+    "window": { "fg": "gray6", "bg": "dracula:current", "attrs": [] },
+    "window:divider": {
+      "fg": "gray4",
+      "bg": "dracula:current",
+      "attrs": []
+    },
+    "window:current": {
+      "fg": "dracula:background",
+      "bg": "dracula:purple",
+      "attrs": []
+    },
+    "window_name": {
+      "fg": "dracula:foreground",
+      "bg": "dracula:purple",
+      "attrs": ["bold"]
+    },
+    "session": {
+      "fg": "dracula:background",
+      "bg": "dracula:purple",
+      "attrs": ["bold"]
+    },
+    "session:prefix": {
+      "fg": "dracula:background",
+      "bg": "dracula:orange",
+      "attrs": ["bold"]
+    },
+    "time": { "fg": "gray10", "bg": "dracula:background", "attrs": ["bold"] },
+    "time:divider": { "fg": "gray5", "bg": "dracula:background", "attrs": [] },
+    "date": { "fg": "gray8", "bg": "dracula:background", "attrs": [] }
+  }
+}
