@@ -44,7 +44,8 @@ local custom_attach = function(client, bufnr)
   keymap(
     "n",
     "<leader>sd",
-    "<cmd>lua vim.diagnostic.show_line_diagnostics(); vim.lsp.util.show_line_diagnostics()<CR>",
+    "<cmd>lua vim.diagnostic.show_line_diagnostics()<CR>",
+    -- vim.lsp.util.show_line_diagnostics()<CR>",
     opts
   )
   keymap("n", "<leader>gn", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
