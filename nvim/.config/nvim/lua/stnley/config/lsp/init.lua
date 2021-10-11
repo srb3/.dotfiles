@@ -52,19 +52,24 @@ local custom_attach = function(client, bufnr)
   keymap("n", "<leader>gll", ":call LspLocationList()<CR>", opts)
 end
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+
 lspconfig.bashls.setup {
   on_init = custom_init,
   on_attach = custom_attach,
+  capabilities = capabilities,
 }
 
 lspconfig.dockerls.setup {
   on_init = custom_init,
   on_attach = custom_attach,
+  capabilities = capabilities,
 }
 
+-- TODO is this necessary?
 --Enable (broadcasting) snippet capability for completion
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
+-- capabilities.textDocument.completion.completionItem.snippetSupport = true
 lspconfig.jsonls.setup {
   on_init = custom_init,
   on_attach = function(client)
@@ -81,6 +86,7 @@ local sumneko_binary = sumneko_root_path .. "/bin/Linux/lua-language-server"
 lspconfig.sumneko_lua.setup {
   on_init = custom_init,
   on_attach = custom_attach,
+  capabilities = capabilities,
   cmd = { sumneko_binary, "-E", sumneko_root_path .. "/main.lua" },
   settings = {
     Lua = {
@@ -108,6 +114,7 @@ lspconfig.sumneko_lua.setup {
 lspconfig.pyright.setup {
   on_init = custom_init,
   on_attach = custom_attach,
+  capabilities = capabilities,
 }
 
 lspconfig.terraformls.setup {
@@ -117,6 +124,7 @@ lspconfig.terraformls.setup {
     client.resolved_capabilities.document_range_formatting = false
     custom_attach(client)
   end,
+  capabilities = capabilities,
 }
 
 lspconfig.tsserver.setup {
@@ -126,16 +134,19 @@ lspconfig.tsserver.setup {
     client.resolved_capabilities.document_range_formatting = false
     custom_attach(client)
   end,
+  capabilities = capabilities,
 }
 
 lspconfig.yamlls.setup {
   on_init = custom_init,
   on_attach = custom_attach,
+  capabilities = capabilities,
 }
 
 local formatters = require "stnley.config.lsp.efm.formatters"
 lspconfig.efm.setup {
   on_attach = custom_attach,
+  capabilities = capabilities,
   init_options = { documentFormatting = true },
   root_dir = vim.loop.cwd,
   filetypes = vim.tbl_keys(formatters),

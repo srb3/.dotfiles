@@ -12,11 +12,18 @@ return require("packer").startup {
     }
 
     use {
-      "hrsh7th/nvim-compe",
-      event = "InsertEnter *",
-      config = function()
-        require "stnley.config.compe"
-      end,
+      {
+        "hrsh7th/nvim-cmp",
+        config = function()
+          require "stnley.config.cmp"
+        end,
+      },
+      { "hrsh7th/cmp-nvim-lsp" },
+      { "hrsh7th/cmp-buffer" },
+      { "hrsh7th/cmp-path" },
+      { "hrsh7th/cmp-vsnip", requires = {
+        { "hrsh7th/vim-vsnip" },
+      } },
     }
 
     use {
