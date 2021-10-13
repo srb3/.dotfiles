@@ -1,5 +1,5 @@
 -- greatest remap ever
-vim.api.nvim_set_keymap("v", "<leader>p", '"_dp', { noremap = true })
+vim.api.nvim_set_keymap("v", "<leader>p", '"_dP', { noremap = true })
 
 -- next greatest remap ever : asbjornHaland
 vim.api.nvim_set_keymap("n", "<leader>y", '"+y', { noremap = true })
