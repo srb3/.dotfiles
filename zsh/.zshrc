@@ -23,6 +23,14 @@ source $XDG_CONFIG_HOME/zsh/scripts/scripts.zsh
 #-----------------------
 # prompt
 #-----------------------
+if [ -n "$DISPLAY" ]; then
+    unset PURE_PROMPT_SYMBOL
+else
+    export PURE_PROMPT_SYMBOL=">"
+    setfont "$DOTFILES/fonts/.fonts/ter-powerline-v20n.psf.gz"
+    source $XDG_CONFIG_HOME/zsh/scripts/dracula-tty.zsh
+fi
+
 fpath=($ZPROMPT $fpath)
 autoload -U promptinit; promptinit
 zstyle :prompt:pure:prompt:success color green
