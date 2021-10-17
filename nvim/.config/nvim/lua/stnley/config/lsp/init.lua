@@ -50,6 +50,7 @@ local custom_attach = function(client, bufnr)
   )
   keymap("n", "<leader>gn", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
   keymap("n", "<leader>gll", ":call LspLocationList()<CR>", opts)
+  keymap("n", "<RightMouse>", '<LeftMouse><cmd>lua vim.lsp.buf.hover({border = "single"})<CR>', opts)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
