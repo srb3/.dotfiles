@@ -30,3 +30,10 @@ ff() {
     local file
     file=$(find ${1:-.} -type f 2> /dev/null | fzf +m) && "$editor" "$file"
 }
+
+
+# autols do an ls after each cd
+autols() {
+    ls
+}
+chpwd_functions=(${chpwd_functions[@]} "autols")
