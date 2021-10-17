@@ -17,8 +17,7 @@ source $DOTFILES/aliases/aliases
 #-----------------------
 # scripts
 #-----------------------
-source $XDG_CONFIG_HOME/zsh/scripts/functions.zsh
-source $XDG_CONFIG_HOME/zsh/scripts/tty.zsh
+for file ($XDG_CONFIG_HOME/zsh/scripts/*.zsh) source $file
 
 
 #-----------------------
