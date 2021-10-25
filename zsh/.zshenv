@@ -20,8 +20,8 @@ export XDG_CACHE_HOME=$XDG_CONFIG_HOME/cache
 #-----------------------
 # editor
 #-----------------------
-export EDITOR="nvim"
-export VISUAL="nvim"
+export EDITOR="vim"
+export VISUAL="$EDITOR"
 
 
 #-----------------------
