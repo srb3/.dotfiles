@@ -64,8 +64,8 @@ source $XDG_CONFIG_HOME/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # fzf
 #-----------------------
 if [ $(command -v "fzf") ]; then
-    source /usr/share/doc/fzf/examples/key-bindings.zsh
-    source /usr/share/doc/fzf/examples/completion.zsh
+    source /usr/share/fzf/key-bindings.zsh
+    source /usr/share/fzf/completion.zsh
 fi
 
 
