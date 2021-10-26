@@ -22,4 +22,3 @@ done
 
 echo "CREATING ${personal}/documents/templates"
 mkdir "${personal}/documents/templates"
-
