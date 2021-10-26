@@ -1,7 +1,14 @@
 #!/bin/zsh
 
-# colorls
-#alias ls='colorls'
+# cp
+alias cp='cp -iv'
+alias mv='mv -iv'
+
+# ls
+alias ls='ls --color=auto'
+
+# grep
+alias grep='grep --color=auto'
 
 # Neovim
 #alias vi='nvim'
