@@ -15,6 +15,7 @@ findutils
 firefox
 firmware-manager
 flex
+fzf
 gawk
 gcc
 gettext
