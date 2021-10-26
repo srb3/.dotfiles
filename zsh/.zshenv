@@ -3,10 +3,27 @@
 #-----------------------
 # Environment variables
 #-----------------------
-export DOTFILES=$HOME/.dotfiles
-export STOW_FOLDERS=(alacritty colorls dunst fonts i3 keepassxc nvim personal powerline python ranger themes tmux user-dirs X11 zsh)
 export LANG=en_US.UTF-8
 export LESSHISTFILE=$XDG_CACHE_HOME/.lesshist
+export DOTFILES=$HOME/.dotfiles
+export STOW_FOLDERS=(alacritty 
+    colorls 
+    dunst 
+    fonts 
+    i3 
+    keepassxc 
+    nvim 
+    personal 
+    powerline 
+    python 
+    ranger 
+    themes 
+    tmux 
+    user-dirs 
+    X11 
+    xdg-shim
+    zsh
+)
 
 
 #-----------------------
@@ -99,9 +116,3 @@ export CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv"
 # gtk
 #-----------------------
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
-
-
-#-----------------------
-# gpg
-#-----------------------
-export GNUPGHOME="$XDG_DATA_HOME/gnupg"

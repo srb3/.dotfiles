@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+HOME=${XDG_DATA_HOME}/w3m /usr/bin/w3m
