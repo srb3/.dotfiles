@@ -3,6 +3,9 @@
 set -u
 set -o pipefail
 
+echo "=============== INSTALLING LUA LANGUAGE SERVER ==============="
+sleep 5
+
 target="$HOME/apps"
 
 echo "=============== install dependencies ==============="

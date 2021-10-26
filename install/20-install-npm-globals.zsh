@@ -3,6 +3,9 @@
 set -u
 set -o pipefail
 
+echo "=============== INSTALLING NPM GLOBALS ==============="
+sleep 5
+
 # nvm is a shell function only in zshrc so have to source that
 echo "=============== checking nvm ==============="
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"

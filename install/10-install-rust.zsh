@@ -3,6 +3,9 @@
 set -u
 set -o pipefail
 
+echo "=============== INSTALLING RUST ==============="
+sleep 5
+
 echo "=============== checking shell ==============="
 if [ -z $RUSTUP_HOME ]; then
     echo "Set 'RUSTUP_HOME' and try again."

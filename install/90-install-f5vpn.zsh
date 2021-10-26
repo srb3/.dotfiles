@@ -6,7 +6,7 @@ set -o pipefail
 function aur_install() {
 	_target=$1
 	repo=$2
-    echo "=============== installing $repo ==============="
+    echo "=============== INSTALLING $repo ==============="
 	git -C $_target clone "https://aur.archlinux.org/${repo}.git"
     if [ $? -eq 0 ]; then
         set -e

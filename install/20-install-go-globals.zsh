@@ -4,6 +4,9 @@ set -e
 set -u
 set -o pipefail
 
+echo "=============== INSTALLING GO PACKAGES ==============="
+sleep 5
+
 echo "=============== checking go ==============="
 if [ $(command -v "go") ]; then
     echo "OKAY"

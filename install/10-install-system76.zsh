@@ -3,6 +3,10 @@
 set -u
 set -o pipefail
 
+echo "=============== INSTALLING SYSTEM76 SOFTWARE ==============="
+sleep 5
+
+
 # dependencies
 echo "=============== installing dependencies ==============="
 sudo pacman -S --needed base-devel git linux-headers

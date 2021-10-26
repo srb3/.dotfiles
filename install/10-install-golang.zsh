@@ -3,6 +3,9 @@
 set -u
 set -o pipefail
 
+echo "=============== INSTALLING GOLANG ==============="
+sleep 5
+
 echo "=============== checking shell ==============="
 if [ -z $GOROOT ]; then
     echo "Set 'GOROOT' and try again."

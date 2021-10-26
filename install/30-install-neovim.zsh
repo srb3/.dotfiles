@@ -4,6 +4,9 @@ set -u
 set -e
 set -o pipefail
 
+echo "=============== INSTALLING NEOVIM ==============="
+sleep 5
+
 target="$HOME/apps"
 
 echo "=============== install dependencies ==============="

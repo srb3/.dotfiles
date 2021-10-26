@@ -3,6 +3,10 @@
 set -u
 set -o pipefail
 
+echo "=============== INSTALLING NVM ==============="
+sleep 5
+
+
 function install_nvm() {
     target=$1
     echo "=============== cloning repo ==============="

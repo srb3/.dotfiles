@@ -3,6 +3,9 @@
 set -u
 set -o pipefail
 
+echo "=============== INSTALLING GEMS ==============="
+sleep 5
+
 echo "=============== checking ruby ==============="
 if [ $(command -v "gem") ]; then
     echo "OKAY"
