@@ -1,0 +1,27 @@
+#!/usr/bin/env zsh
+
+# would be nice if this was more dynamic based off of user-dirs
+
+personal="$HOME/personal"
+personal_dirs=(documents music pictures videos) 
+
+# create home directories
+echo "CREATING $HOME/apps"
+mkdir "$HOME/apps" 
+
+echo "CREATING $personal"
+mkdir $personal 
+
+echo "CREATING $HOME/work"
+mkdir "$HOME/work"
+
+# create xdg directories
+for dir in $personal_dirs
+do
+	echo "CREATING ${personal}/${dir}"
+	mkdir "${personal}/${dir}"
+done
+
+echo "CREATING ${personal}/documents/templates"
+mkdir "${personal}/documents/templates"
+
