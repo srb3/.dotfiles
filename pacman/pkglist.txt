@@ -33,6 +33,7 @@ i3status
 intel-ucode
 keepassxc
 libfirmware-manager
+libgnome-keyring
 libtool
 light
 linux
@@ -46,6 +47,7 @@ man-pages
 neofetch
 network-manager-applet
 networkmanager
+nextcloud-client
 ntp
 pacman
 patch
