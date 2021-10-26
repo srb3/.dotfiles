@@ -5,6 +5,7 @@
 sudo pacman -S git
 git clone https://github.com/stnley/.dotfiles.git
 cd ~/.dotfiles/
+git submodule update --init --recursive
 ./pacman/install.sh         # install arch packages
 ./bootstrap.zsh             # prepare home directory
 ./install.zsh               # install configs
