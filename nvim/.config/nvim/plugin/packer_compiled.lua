@@ -44,8 +44,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/michael/.config/cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/michael/.config/cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/michael/.config/cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/michael/.config/cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/michael/.config/cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
+local package_path_str = "/home/stnley/.config/cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/stnley/.config/cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/stnley/.config/cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/stnley/.config/cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/stnley/.config/cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -71,69 +71,72 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["cmp-buffer"] = {
     loaded = true,
-    path = "/home/michael/.config/local/share/nvim/site/pack/packer/start/cmp-buffer"
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/start/cmp-buffer"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
-    path = "/home/michael/.config/local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
   },
   ["cmp-path"] = {
     loaded = true,
-    path = "/home/michael/.config/local/share/nvim/site/pack/packer/start/cmp-path"
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/start/cmp-path"
   },
   ["cmp-vsnip"] = {
     loaded = true,
-    path = "/home/michael/.config/local/share/nvim/site/pack/packer/start/cmp-vsnip"
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/start/cmp-vsnip"
   },
   fzf = {
     loaded = true,
-    path = "/home/michael/.config/local/share/nvim/site/pack/packer/start/fzf"
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/start/fzf"
   },
   ["fzf.vim"] = {
     config = { "\27LJ\2\n2\0\0\2\0\3\0\0056\0\0\0009\0\1\0+\1\2\0=\1\2\0K\0\1\0\21fzf_buffers_jump\6g\bvim\0" },
     load_after = {},
     loaded = true,
     needs_bufread = false,
-    path = "/home/michael/.config/local/share/nvim/site/pack/packer/opt/fzf.vim"
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/opt/fzf.vim"
   },
   ["lualine.nvim"] = {
     config = { "\27LJ\2\n]\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\foptions\1\0\0\1\0\1\ntheme\fdracula\nsetup\flualine\frequire\0" },
     loaded = false,
     needs_bufread = false,
-    path = "/home/michael/.config/local/share/nvim/site/pack/packer/opt/lualine.nvim"
+    only_cond = false,
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/opt/lualine.nvim"
   },
   ["nvim-cmp"] = {
     config = { "\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22stnley.config.cmp\frequire\0" },
     loaded = true,
-    path = "/home/michael/.config/local/share/nvim/site/pack/packer/start/nvim-cmp"
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/start/nvim-cmp"
   },
   ["nvim-colorizer.lua"] = {
     config = { "\27LJ\2\ng\0\0\3\0\6\0\n6\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\3\0009\0\4\0'\2\5\0B\0\2\1K\0\1\0\28ColorizerAttachToBuffer\bcmd\bvim\nsetup\14colorizer\frequire\0" },
     loaded = false,
     needs_bufread = false,
-    path = "/home/michael/.config/local/share/nvim/site/pack/packer/opt/nvim-colorizer.lua"
+    only_cond = false,
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/opt/nvim-colorizer.lua"
   },
   ["nvim-lspconfig"] = {
     config = { "\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22stnley.config.lsp\frequire\0" },
     loaded = true,
-    path = "/home/michael/.config/local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/start/nvim-lspconfig"
   },
   ["nvim-treesitter"] = {
     loaded = true,
-    path = "/home/michael/.config/local/share/nvim/site/pack/packer/start/nvim-treesitter"
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/start/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
-    path = "/home/michael/.config/local/share/nvim/site/pack/packer/start/nvim-web-devicons"
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/home/michael/.config/local/share/nvim/site/pack/packer/start/packer.nvim"
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/start/packer.nvim"
   },
   ["plenary.nvim"] = {
     loaded = false,
     needs_bufread = false,
-    path = "/home/michael/.config/local/share/nvim/site/pack/packer/opt/plenary.nvim"
+    only_cond = false,
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/opt/plenary.nvim"
   },
   ["telescope.nvim"] = {
     after = { "fzf.vim" },
@@ -142,33 +145,37 @@ _G.packer_plugins = {
   },
   vim = {
     loaded = true,
-    path = "/home/michael/.config/local/share/nvim/site/pack/packer/start/vim"
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/start/vim"
   },
   ["vim-commentary"] = {
     loaded = false,
     needs_bufread = false,
-    path = "/home/michael/.config/local/share/nvim/site/pack/packer/opt/vim-commentary"
+    only_cond = false,
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/opt/vim-commentary"
   },
   ["vim-fugitive"] = {
     commands = { "Git", "Gstatus", "Gblame", "Gpush", "Gpull" },
     loaded = false,
     needs_bufread = true,
-    path = "/home/michael/.config/local/share/nvim/site/pack/packer/opt/vim-fugitive"
+    only_cond = false,
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/opt/vim-fugitive"
   },
   ["vim-gitgutter"] = {
     loaded = false,
     needs_bufread = false,
-    path = "/home/michael/.config/local/share/nvim/site/pack/packer/opt/vim-gitgutter"
+    only_cond = false,
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/opt/vim-gitgutter"
   },
   ["vim-markdown"] = {
     config = { "\27LJ\2\n6\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\27stnley.config.markdown\frequire\0" },
     loaded = false,
     needs_bufread = true,
-    path = "/home/michael/.config/local/share/nvim/site/pack/packer/opt/vim-markdown"
+    only_cond = false,
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/opt/vim-markdown"
   },
   ["vim-vsnip"] = {
     loaded = true,
-    path = "/home/michael/.config/local/share/nvim/site/pack/packer/start/vim-vsnip"
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/start/vim-vsnip"
   }
 }
 
@@ -205,14 +212,14 @@ end
 time([[Config for nvim-cmp]], true)
 try_loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22stnley.config.cmp\frequire\0", "config", "nvim-cmp")
 time([[Config for nvim-cmp]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-try_loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22stnley.config.lsp\frequire\0", "config", "nvim-lspconfig")
-time([[Config for nvim-lspconfig]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
 try_loadstring("\27LJ\2\n7\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\28stnley.config.telescope\frequire\0", "config", "telescope.nvim")
 time([[Config for telescope.nvim]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+try_loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22stnley.config.lsp\frequire\0", "config", "nvim-lspconfig")
+time([[Config for nvim-lspconfig]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd fzf.vim ]]
@@ -224,11 +231,11 @@ time([[Sequenced loading]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Gpull lua require("packer.load")({'vim-fugitive'}, { cmd = "Gpull", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Git lua require("packer.load")({'vim-fugitive'}, { cmd = "Git", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Gstatus lua require("packer.load")({'vim-fugitive'}, { cmd = "Gstatus", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Gblame lua require("packer.load")({'vim-fugitive'}, { cmd = "Gblame", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Gpush lua require("packer.load")({'vim-fugitive'}, { cmd = "Gpush", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Gpull lua require("packer.load")({'vim-fugitive'}, { cmd = "Gpull", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Git lua require("packer.load")({'vim-fugitive'}, { cmd = "Git", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 time([[Defining lazy-load commands]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
@@ -239,13 +246,13 @@ vim.cmd [[au FileType markdown ++once lua require("packer.load")({'vim-markdown'
 time([[Defining lazy-load filetype autocommands]], false)
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufRead * ++once lua require("packer.load")({'lualine.nvim', 'nvim-colorizer.lua', 'vim-commentary', 'vim-gitgutter'}, { event = "BufRead *" }, _G.packer_plugins)]]
+vim.cmd [[au BufRead * ++once lua require("packer.load")({'vim-commentary', 'lualine.nvim', 'nvim-colorizer.lua', 'vim-gitgutter'}, { event = "BufRead *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 vim.cmd [[augroup filetypedetect]]
-time([[Sourcing ftdetect script at: /home/michael/.config/local/share/nvim/site/pack/packer/opt/vim-markdown/ftdetect/markdown.vim]], true)
-vim.cmd [[source /home/michael/.config/local/share/nvim/site/pack/packer/opt/vim-markdown/ftdetect/markdown.vim]]
-time([[Sourcing ftdetect script at: /home/michael/.config/local/share/nvim/site/pack/packer/opt/vim-markdown/ftdetect/markdown.vim]], false)
+time([[Sourcing ftdetect script at: /home/stnley/.config/local/share/nvim/site/pack/packer/opt/vim-markdown/ftdetect/markdown.vim]], true)
+vim.cmd [[source /home/stnley/.config/local/share/nvim/site/pack/packer/opt/vim-markdown/ftdetect/markdown.vim]]
+time([[Sourcing ftdetect script at: /home/stnley/.config/local/share/nvim/site/pack/packer/opt/vim-markdown/ftdetect/markdown.vim]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end
 
