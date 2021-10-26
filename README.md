@@ -13,6 +13,11 @@ git submodule update --init --recursive
 ```
 
 ### Maintenance:
+After adding new packages with pacman:
+```
+./pacman/save.sh
+```
+
 When adding new configs, create the required directories. Then, add the base directory to `$STOW_FOLDERS`.
 
 Afterwards, clean and reinstall.
