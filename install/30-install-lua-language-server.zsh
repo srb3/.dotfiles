@@ -15,8 +15,13 @@ sudo pacman -S ninja --needed
 function download_sumneko() {
     _target=$1
 
-    echo "=============== cloning repo ==============="
-    git clone https://github.com/sumneko/lua-language-server $_target
+    if [ -d "$_target" ]; then
+        echo "lua-language-server already found."
+    else
+        echo "=============== cloning repo ==============="
+        git clone https://github.com/sumneko/lua-language-server $_target
+    fi
+
     cd $_target
 
     echo "=============== updating submodules  ==============="

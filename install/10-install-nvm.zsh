@@ -20,7 +20,6 @@ function install_nvm() {
 function verify_nvm() {
     if [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; then
         echo "INSTALLED nvm"
-        exit 0
     else
         echo "Something went wrong."
         exit 1

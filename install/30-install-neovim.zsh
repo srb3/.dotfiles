@@ -17,7 +17,7 @@ function download_neovim() {
     _target=$1
 
     if [ -d "$_target" ]; then
-        echo "neovim Already found"
+        echo "neovim already found."
     else
         echo "=============== cloning repo ==============="
         git clone https://github.com/neovim/neovim $_target
