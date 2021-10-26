@@ -5,6 +5,7 @@ base
 binutils
 bison
 blueman
+cmake
 dmenu
 dolphin
 dunst
@@ -72,6 +73,7 @@ system76-firmware-daemon
 system76-power
 texinfo
 tmux
+tree-sitter
 ttf-dejavu
 udiskie
 unzip
