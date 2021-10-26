@@ -64,6 +64,7 @@ qt5ct
 ranger
 ruby
 sed
+slack-desktop
 spotify
 stow
 sudo
