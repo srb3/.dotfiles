@@ -10,6 +10,7 @@ dmenu
 dolphin
 dunst
 efibootmgr
+f5vpn
 fakeroot
 feh
 file
