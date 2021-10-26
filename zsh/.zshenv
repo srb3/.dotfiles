@@ -93,7 +93,7 @@ export VIMCONFIG="$XDG_CONFIG_HOME/nvim"
 #-----------------------
 # nvm
 #-----------------------
-export NVM_DIR="${XDG_CONFIG_HOME}/nvm"
+export NVM_DIR="${XDG_DATA_HOME}/nvm"
 
 
 #-----------------------

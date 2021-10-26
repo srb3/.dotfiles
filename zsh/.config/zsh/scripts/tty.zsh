@@ -5,6 +5,6 @@ else
 
     # for some reason when running inside tmux, this throws error
     if [ "$TERM" != "tmux-256color" ]; then
-        setfont "$DOTFILES/fonts/.fonts/ter-powerline-v20n.psf.gz"
+        setfont "$XDG_DATA_HOME/fonts/ter-powerline-v20n.psf.gz"
     fi
 fi
