@@ -63,9 +63,7 @@ export GOCACHE="$XDG_CACHE_HOME/go-build"
 #-----------------------
 # ruby
 #-----------------------
-export GEM_HOME="$XDG_DATA_HOME/ruby"
-export GEM_PATH="$GEM_HOME/gems"
-export GEM_SPEC_CACHE="$XDG_CACHE_HOME/.gem"
+export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 
 
 #-----------------------
@@ -100,6 +98,7 @@ export NVM_DIR="${XDG_DATA_HOME}/nvm"
 # PATH
 #-----------------------
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$GEM_HOME/bin:$PATH"
 export PATH="$GOROOT/bin:$PATH"
 export PATH="$GOBIN:$PATH"
 export PATH="$POETRY_BIN:$PATH"
