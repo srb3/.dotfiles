@@ -93,3 +93,15 @@ export PATH="$CARGO_HOME/bin:$PATH"
 # nvidia driver specific
 #-----------------------
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv"
+
+
+#-----------------------
+# gtk
+#-----------------------
+export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
+
+
+#-----------------------
+# gpg
+#-----------------------
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
