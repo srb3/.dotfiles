@@ -48,6 +48,7 @@ neofetch
 network-manager-applet
 networkmanager
 nextcloud-client
+ninja
 ntp
 pacman
 patch
