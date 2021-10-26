@@ -77,6 +77,7 @@ system76-firmware-daemon
 system76-power
 texinfo
 tmux
+tree
 tree-sitter
 ttf-dejavu
 udiskie
