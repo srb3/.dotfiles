@@ -20,7 +20,7 @@ After adding new packages with pacman:
 
 When adding new configs, create the required directories. Then, add the base directory to `$STOW_FOLDERS`.
 
-Afterwards, clean and reinstall.
+Afterwards, clean and reinstall:
 ```
 ./clean-env.zsh
 ./install.zsh
