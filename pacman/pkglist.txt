@@ -58,6 +58,7 @@ pkgconf
 powerline
 pulseaudio
 pulseaudio-alsa
+pulseaudio-bluetooth
 python
 python-pip
 qt5ct
