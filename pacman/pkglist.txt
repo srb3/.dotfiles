@@ -7,6 +7,7 @@ bison
 blueman
 dmenu
 dolphin
+dunst
 efibootmgr
 fakeroot
 feh
@@ -58,6 +59,7 @@ qt5ct
 ranger
 ruby
 sed
+spotify
 stow
 sudo
 system76-acpi-dkms
@@ -68,6 +70,7 @@ system76-power
 texinfo
 tmux
 ttf-dejavu
+udiskie
 unzip
 vim
 w3m
