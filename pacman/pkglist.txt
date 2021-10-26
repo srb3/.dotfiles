@@ -63,6 +63,7 @@ python
 python-pip
 qt5ct
 ranger
+ripgrep
 ruby
 sed
 slack-desktop
