@@ -48,6 +48,7 @@ ntp
 pacman
 patch
 pkgconf
+powerline
 pulseaudio
 pulseaudio-alsa
 python
