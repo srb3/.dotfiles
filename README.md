@@ -25,3 +25,30 @@ Afterwards, clean and reinstall:
 ./clean-env.zsh
 ./install.zsh
 ```
+
+### Additional steps
+On a fresh install, a few things need to happen.
+
+#### Enable bluetooth
+*enable* will make it start every login, *start* will just be for a session.
+```
+sudo systemctl enable|start bluetooth
+```
+
+#### gnome-keyring PAM step
+see details here: [GNOME/Keyring](https://wiki.archlinux.org/title/GNOME/Keyring#PAM_step)
+
+(add highlighted lines)
+```
+/etc/pam.d/login
+---
+#%PAM-1.0
+
+auth       required     pam_securetty.so
+auth       requisite    pam_nologin.so
+auth       include      system-local-login
+*auth       optional     pam_gnome_keyring.so*
+account    include      system-local-login
+session    include      system-local-login
+*session    optional     pam_gnome_keyring.so auto_start*
+```
