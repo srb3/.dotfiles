@@ -7,18 +7,12 @@ personal="$HOME/personal"
 personal_dirs=(documents music pictures videos)
 
 # create home directories
-for dir in $home_dirs
-do
-	echo "CREATING ${HOME}/${dir}"
-	mkdir "${HOME}/${dir}"
-done
+echo "CREATING HOME DIRS"
+cd $HOME
+mkdir ${home_dirs[@]}
 
 # create xdg directories
-for dir in $personal_dirs
-do
-	echo "CREATING ${personal}/${dir}"
-	mkdir "${personal}/${dir}"
-done
-
-echo "CREATING ${personal}/documents/templates"
+echo "CREATING XDG DIRS"
+cd $personal
+mkdir ${personal_dirs[@]}
 mkdir "${personal}/documents/templates"
