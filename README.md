@@ -52,3 +52,10 @@ account    include      system-local-login
 session    include      system-local-login
 *session    optional     pam_gnome_keyring.so auto_start*
 ```
+
+#### Laptop backlight control
+*light* should work out of the box (installed via pacman). If it is not working,
+make sure user is part of the *video* group.
+```
+sudo usermod -aG video $USER
+```
