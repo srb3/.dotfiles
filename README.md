@@ -8,8 +8,8 @@ cd ~/.dotfiles/
 git submodule update --init --recursive
 ./pacman/install.sh         # install arch packages
 ./bootstrap.zsh             # prepare home directory
-./install.zsh               # install configs
 ./install-apps.zsh          # install packages from AUR, source, and others
+./install.zsh               # install configs
 ```
 
 ### Maintenance:
