@@ -2,7 +2,7 @@
 
 # would be nice if this was more dynamic based off of user-dirs
 
-home_dirs=(apps personal work)
+home_dirs=(apps personal work .local)
 personal="$HOME/personal"
 personal_dirs=(documents music pictures videos)
 
