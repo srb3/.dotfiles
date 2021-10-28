@@ -5,9 +5,6 @@ alias cp='cp -iv'
 alias mv='mv -iv'
 
 # ls
-case $(type rm) in
-    (*alias*) unalias rm;;
-esac
 if [ $(command -v "colorls") ]; then
     alias ls='colorls'
 else
@@ -18,8 +15,8 @@ fi
 alias grep='grep --color=auto'
 
 # Neovim
-#alias vi='nvim'
-#alias vim='nvim'
+alias vi='vim'
+[ -x "$(command -v nvim)" ] && alias vim="nvim"
 
 # Lynx
 alias lynx='lynx -vikeys -accept_all_cookies'
