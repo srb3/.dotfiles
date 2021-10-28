@@ -6,21 +6,21 @@
 export LANG=en_US.UTF-8
 export LESSHISTFILE=$XDG_CACHE_HOME/.lesshist
 export DOTFILES=$HOME/.dotfiles
-export STOW_FOLDERS=(alacritty 
-    colorls 
-    dunst 
-    fonts 
-    i3 
-    keepassxc 
-    nvim 
-    personal 
-    powerline 
-    python 
-    ranger 
-    themes 
-    tmux 
-    user-dirs 
-    X11 
+export STOW_FOLDERS=(alacritty
+    colorls
+    dunst
+    fonts
+    i3
+    keepassxc
+    nvim
+    personal
+    powerline
+    python
+    ranger
+    themes
+    tmux
+    user-dirs
+    X11
     xdg-shim
     zsh
 )
@@ -91,7 +91,7 @@ export VIMCONFIG="$XDG_CONFIG_HOME/nvim"
 #-----------------------
 # nvm
 #-----------------------
-export NVM_DIR="${XDG_DATA_HOME}/nvm"
+export NVM_DIR="$XDG_DATA_HOME/nvm"
 
 
 #-----------------------

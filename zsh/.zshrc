@@ -11,7 +11,9 @@ unsetopt beep
 #-----------------------
 # aliases
 #-----------------------
-source $DOTFILES/aliases/aliases
+if [ -s "$DOTFILES/aliases/aliases" ]; then
+    source $DOTFILES/aliases/aliases
+fi
 
 
 #-----------------------
@@ -57,15 +59,25 @@ autoload -Uz compinit; compinit -d $XDG_CACHE_HOME/.zcompdump
 # autosuggestions
 #-----------------------
 ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
-source $XDG_CONFIG_HOME/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+autosuggest="$XDG_CONFIG_HOME/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
+
+if [ -s $autosuggest ]; then
+    source $autosuggest
+fi
 
 
 #-----------------------
 # fzf
 #-----------------------
-if [ $(command -v "fzf") ]; then
-    source /usr/share/fzf/key-bindings.zsh
-    source /usr/share/fzf/completion.zsh
+fzf_completion="/usr/share/fzf/completion.zsh"
+fzf_keybinds="/usr/share/fzf/key-bindings.zsh"
+
+if [ $(command -v "fzf") ] &&
+    [ -s $fzf_completion ] &&
+    [ -s $fzf_keybinds ];
+then
+    source $fzf_completion
+    source $fzf_keybinds
     export FZF_DEFAULT_OPTS=" \
         --color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 \
         --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 \
@@ -77,4 +89,4 @@ fi
 #-----------------------
 # node
 #-----------------------
- [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
