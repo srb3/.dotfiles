@@ -7,6 +7,7 @@ export LANG=en_US.UTF-8
 export LESSHISTFILE=$XDG_CACHE_HOME/.lesshist
 export DOTFILES=$HOME/.dotfiles
 export STOW_FOLDERS=(alacritty
+    bin
     colorls
     dunst
     fonts
@@ -21,7 +22,6 @@ export STOW_FOLDERS=(alacritty
     tmux
     user-dirs
     X11
-    xdg-shim
     zsh
 )
 
