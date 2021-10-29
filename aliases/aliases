@@ -5,11 +5,12 @@ alias cp='cp -iv'
 alias mv='mv -iv'
 
 # ls
-if [ $(command -v "colorls") ]; then
+if [ -x $(command -v "colorls") ]; then
     alias ls='colorls'
 else
     alias ls='ls --color=auto'
 fi
+alias lall='ls -ghoA'
 
 # grep
 alias grep='grep --color=auto'
