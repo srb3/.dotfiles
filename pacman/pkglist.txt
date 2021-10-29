@@ -51,6 +51,7 @@ network-manager-applet
 networkmanager
 nextcloud-client
 ninja
+ntfs-3g
 ntp
 pacman
 patch
