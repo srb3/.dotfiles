@@ -175,7 +175,7 @@
     max_icon_size = 64
 
     # Paths to default icons.
-    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+    icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
 
     ### History ###
 
@@ -428,3 +428,10 @@
 #    set_stack_tag = "volume"
 #
 # vim: ft=cfg
+[change-brightness]
+    highlight = "#8be9fd"
+    icon = ""
+
+[change-volume]
+    highlight = "#50fa7b"
+    icon = ""
