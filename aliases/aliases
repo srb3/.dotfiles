@@ -6,9 +6,9 @@ alias mv='mv -iv'
 
 # ls
 if [ -x $(command -v "colorls") ]; then
-    alias ls='colorls'
+    alias ls='colorls --group-directories-first'
 else
-    alias ls='ls --color=auto'
+    alias ls='ls --color=auto --group-directories-first'
 fi
 alias lall='ls -ghoA'
 
