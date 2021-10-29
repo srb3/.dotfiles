@@ -52,6 +52,12 @@ export SAVEHIST=1000
 
 
 #-----------------------
+# gpg
+#-----------------------
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+
+
+#-----------------------
 # golang
 #-----------------------
 export GOROOT="$XDG_DATA_HOME/go"
