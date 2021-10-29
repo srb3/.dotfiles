@@ -37,7 +37,7 @@ function build_neovim() {
     _target=$1
     cd $_target
     echo "=============== building neovim ==============="
-    make -j4
+    make -j$(nproc)
     echo "=============== installing neovim ==============="
     sudo make install
 }
