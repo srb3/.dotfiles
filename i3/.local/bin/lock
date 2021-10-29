@@ -1,44 +1,47 @@
 #!/bin/sh
 
-greet="Welcome, Back"
-color="f8f8f2"
-wrong_pass="Incorrect, Try Again"
-font="FiraCode Nerd Font Regular"
+function lock_command() {
+	greet="Welcome, Back"
+	color="f8f8f2"
+	wrong_pass="Incorrect, Try Again"
+	font="FiraCode Nerd Font Regular"
+	i3lock \
+		--nofork \
+		--ignore-empty-password \
+		\
+		--blur=5 \
+		\
+		--bar-indicator \
+		--bar-pos="1070" \
+		--bar-base-width="10" \
+		--bar-direction=0 \
+		--bar-orientation=horizontal \
+		--bar-color="282a36" \
+		\
+		--ringver-color="$color" \
+		--ringwrong-color="$color" \
+		\
+		--bshl-color="$color" \
+		--keyhl-color="$color" \
+		\
+		--clock \
+		--time-font="$font" \
+		--time-color="$color" \
+		--time-size=72 \
+		--time-str="%H:%M:%S" \
+		\
+		--date-font="$font" \
+		--date-color="$color" \
+		--date-size=18 \
+		--date-str="%A, %d %B" \
+		\
+		--verif-font="$font" \
+		--verif-color="$color" \
+		--verif-size=24 \
+		--wrong-font="$font" \
+		--wrong-color="$color" \
+		--wrong-size=24 \
+		--wrong-text="$wrong_pass"
+}
 
-i3lock \
-	--nofork \
-	--ignore-empty-password \
-	\
-	--blur=5 \
-	\
-	--bar-indicator \
-	--bar-pos="1070" \
-	--bar-base-width="10" \
-	--bar-direction=0 \
-	--bar-orientation=horizontal \
-	--bar-color="282a36" \
-	\
-	--ringver-color="$color" \
-	--ringwrong-color="$color" \
-	\
-	--bshl-color="$color" \
-	--keyhl-color="$color" \
-	\
-	--clock \
-	--time-font="$font" \
-	--time-color="$color" \
-	--time-size=72 \
-	--time-str="%H:%M:%S" \
-	\
-	--date-font="$font" \
-	--date-color="$color" \
-	--date-size=18 \
-	--date-str="%A, %d %B" \
-	\
-	--verif-font="$font" \
-	--verif-color="$color" \
-	--verif-size=24 \
-	--wrong-font="$font" \
-	--wrong-color="$color" \
-	--wrong-size=24 \
-	--wrong-text="$wrong_pass"
+killall -SIGUSR1 dunst && $(lock_command) && killall -SIGUSR2 dunst
