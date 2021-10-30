@@ -4,6 +4,9 @@
 alias cp='cp -iv'
 alias mv='mv -iv'
 
+# grep
+alias grep='grep --color=auto'
+
 # ls
 if [ -x $(command -v "colorls") ]; then
     alias ls='colorls --group-directories-first'
@@ -12,15 +15,15 @@ else
 fi
 alias lall='ls -ghoA'
 
-# grep
-alias grep='grep --color=auto'
+# Lynx
+alias lynx='lynx -vikeys -accept_all_cookies'
 
 # Neovim
 alias vi='vim'
 [ -x "$(command -v nvim)" ] && alias vim="nvim"
 
-# Lynx
-alias lynx='lynx -vikeys -accept_all_cookies'
+# pacman
+alias pacman='pacman --color auto'
 
 # wget
 alias wget="wget --hsts-file $XDG_CACHE_HOME/.wget-hsts"
