@@ -6,13 +6,19 @@ set -o pipefail
 function aur_install() {
 	_target=$1
 	repo=$2
-    echo "=============== installing $repo ==============="
-	git -C $_target clone "https://aur.archlinux.org/${repo}.git"
+    if [ -d "$_target/$repo" ]; then
+        echo "$repo already found."
+    else
+        echo "=============== INSTALLING $repo ==============="
+        git -C $_target clone "https://aur.archlinux.org/${repo}.git"
+        echo "CLONED $repo"
+    fi
+
     if [ $? -eq 0 ]; then
         set -e
-        echo "CLONED $repo"
 	    cd "$_target/$repo"
-	    makepkg -srcif
+        git pull
+	    makepkg -srcif --needed
         echo "INSTALLED $repo"
         return 0
     else
@@ -21,5 +27,8 @@ function aur_install() {
     fi
 }
 
+
 target="$HOME/apps"
+
+curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | gpg --import -
 aur_install $target spotify

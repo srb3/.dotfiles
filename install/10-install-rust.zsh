@@ -14,5 +14,12 @@ else
     echo "OKAY"
 fi
 
+echo "=============== checking current installation ==============="
+if [ $(command -v "rustup") ]; then
+    echo "Rustup is already installed!"
+    echo "Update with 'rustup self update'"
+    exit 0
+fi
+
 echo "=============== running installer (UNSAFELY) ==============="
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --no-modify-path

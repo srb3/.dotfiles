@@ -9,16 +9,24 @@ sleep 5
 
 function install_nvm() {
     target=$1
-    echo "=============== cloning repo ==============="
-    git clone https://github.com/nvm-sh/nvm.git $target
+    if [ -d "$target" ]; then
+        echo "nvm already found."
+    else
+        echo "=============== cloning repo ==============="
+        git clone https://github.com/nvm-sh/nvm.git $target
+    fi
+
     cd $target
+
+    echo "=============== switching to main  ==============="
+    git checkout master && git pull && git fetch --tags
+
     echo "=============== checking out latest release ===============" &&
-    git fetch --tags origin &&
     git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
 }
 
 function verify_nvm() {
-    if [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; then
+    if [ -f "$NVM_DIR/nvm.sh" ]; then
         echo "INSTALLED nvm"
     else
         echo "Something went wrong."
@@ -27,11 +35,11 @@ function verify_nvm() {
 }
 
 echo "=============== checking shell ==============="
-if [ -z $NVM_DIR ]; then
+if [ -n $NVM_DIR ]; then
+    echo "OKAY"
+else
     echo "Set 'NVM_DIR' and try again."
     exit 1
-else
-    echo "OKAY"
 fi
 
 install_nvm $NVM_DIR
