@@ -97,4 +97,5 @@ xorg-xrandr
 xorg-xrdb
 xterm
 zip
+zoom
 zsh
