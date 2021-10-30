@@ -25,5 +25,8 @@ alias vi='vim'
 # pacman
 alias pacman='pacman --color auto'
 
+# sudo
+alias sudo="nocorrect sudo "
+
 # wget
 alias wget="wget --hsts-file $XDG_CACHE_HOME/.wget-hsts"
