@@ -6,7 +6,7 @@ if [ -e /sys/class/power_supply/BAT0 ]; then
 	battery_state=$(cat /sys/class/power_supply/BAT0/status)
 	battery_power=$(cat /sys/class/power_supply/BAT0/capacity)
 
-	if [ "$battery_state" = "Discharging" ] && [ $battery_power -le 100 ]; then
+	if [ "$battery_state" = "Discharging" ] && [ $battery_power -le 20 ]; then
 		notify-send -u critical -t 60000 " BATTERY LOW "
 	elif [ "$battery_state" = "Charging" ] && [ $battery_power -eq 100 ]; then
 		notify-send -u normal " BATTERY FULL "
