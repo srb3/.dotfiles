@@ -14,6 +14,7 @@ export STOW_FOLDERS=(alacritty
     i3
     keepassxc
     nvim
+    pacman
     personal
     powerline
     python

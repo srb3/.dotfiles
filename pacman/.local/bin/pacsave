@@ -1,6 +1,6 @@
 #!/bin/sh
 
-save_file="$DOTFILES/pacman/pkglist.txt"
+save_file="$DOTFILES/pkglist.txt"
 echo "Saving package list to $save_file"
 
 pacman -Qqe >$save_file
