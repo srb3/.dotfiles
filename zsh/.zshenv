@@ -18,6 +18,7 @@ export STOW_FOLDERS=(alacritty
     powerline
     python
     ranger
+    systemd
     themes
     tmux
     user-dirs

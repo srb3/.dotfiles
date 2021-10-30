@@ -1,0 +1,12 @@
+[Unit]
+Description=Check battery status every 5 minutes
+RefuseManualStart=no  # Allow manual starts
+RefuseManualStop=no   # Allow manual stops
+
+[Timer]
+OnBootSec=120
+OnUnitActiveSec=1200
+Unit=battery-status.service
+
+[Install]
+WantedBy=timers.target
