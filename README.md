@@ -6,16 +6,16 @@ sudo pacman -S git
 git clone https://github.com/stnley/.dotfiles.git
 cd ~/.dotfiles/
 git submodule update --init --recursive
-./pacman/install.sh         # install arch packages
-./bootstrap.zsh             # prepare home directory
-./install-apps.zsh          # install packages from AUR, source, and others
-./install.zsh               # install configs
+./pacman/.local/bin/pacinstall  # install arch packages
+./bootstrap.zsh                 # prepare home directory
+./install-apps.zsh              # install packages from AUR, source, and others
+./install.zsh                   # install configs
 ```
 
 ### Maintenance:
 After adding new packages with pacman:
 ```
-./pacman/save.sh
+pacsave
 ```
 
 When adding new configs, create the required directories. Then, add the base directory to `$STOW_FOLDERS`.
@@ -58,4 +58,11 @@ session    include      system-local-login
 make sure user is part of the *video* group.
 ```
 sudo usermod -aG video $USER
+```
+
+#### set up Docker
+(must log out for group privileges to take effect)
+```
+sudo systemctl enable --now
+sudo usermod -aG docker $USER
 ```
