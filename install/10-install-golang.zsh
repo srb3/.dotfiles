@@ -5,8 +5,20 @@ set -o pipefail
 
 VERSION="1.17.2"
 
-echo "=============== INSTALLING GOLANG ==============="
-sleep 5
+function yes_or_no {
+    while true; do
+        read "?$* [y/n]: " yn
+        case $yn in
+            [Yy]*)
+                return 0
+                ;;
+            [Nn]*)
+                echo "Cancelled"
+                return  1
+                ;;
+        esac
+    done
+}
 
 function check_shell() {
     echo "=============== checking shell ==============="
@@ -53,11 +65,16 @@ function extract() {
     go version
 }
 
-check_shell
-check_install
-if [ $? -eq 1 ]; then
-    remove_old
-    download
-    extract
+yes_or_no "Install golang?"
+if [ $? -eq 0 ]; then
+    echo "=============== INSTALLING GOLANG ==============="
+    sleep 5
+    check_shell
+    check_install
+    if [ $? -eq 1 ]; then
+        remove_old
+        download
+        extract
+    fi
 fi
 

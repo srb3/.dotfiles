@@ -3,6 +3,21 @@
 set -u
 set -o pipefail
 
+function yes_or_no {
+    while true; do
+        read "?$* [y/n]: " yn
+        case $yn in
+            [Yy]*)
+                return 0
+                ;;
+            [Nn]*)
+                echo "Cancelled"
+                return  1
+                ;;
+        esac
+    done
+}
+
 function aur_install() {
 	_target=$1
 	repo=$2
@@ -27,5 +42,8 @@ function aur_install() {
     fi
 }
 
-target="$HOME/apps"
-aur_install $target f5vpn
+yes_or_no "Install f5vpn?"
+if [ $? -eq 0 ]; then
+    target="$HOME/apps"
+    aur_install $target f5vpn
+fi

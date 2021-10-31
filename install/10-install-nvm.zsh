@@ -3,9 +3,30 @@
 set -u
 set -o pipefail
 
-echo "=============== INSTALLING NVM ==============="
-sleep 5
+function yes_or_no {
+    while true; do
+        read "?$* [y/n]: " yn
+        case $yn in
+            [Yy]*)
+                return 0
+                ;;
+            [Nn]*)
+                echo "Cancelled"
+                return  1
+                ;;
+        esac
+    done
+}
 
+function check_shell() {
+    echo "=============== checking shell ==============="
+    if [ -n $NVM_DIR ]; then
+        echo "OKAY"
+    else
+        echo "Set 'NVM_DIR' and try again."
+        exit 1
+    fi
+}
 
 function install_nvm() {
     target=$1
@@ -34,18 +55,16 @@ function verify_nvm() {
     fi
 }
 
-echo "=============== checking shell ==============="
-if [ -n $NVM_DIR ]; then
-    echo "OKAY"
-else
-    echo "Set 'NVM_DIR' and try again."
-    exit 1
-fi
-
-install_nvm $NVM_DIR
+yes_or_no "Install nvm?"
 if [ $? -eq 0 ]; then
-    verify_nvm
-else
-    echo "Something went wrong."
-    exit 1
+    echo "=============== INSTALLING NVM ==============="
+    sleep 5
+    check_shell
+    install_nvm $NVM_DIR
+    if [ $? -eq 0 ]; then
+        verify_nvm
+    else
+        echo "Something went wrong."
+        exit 1
+    fi
 fi

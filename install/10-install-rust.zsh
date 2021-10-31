@@ -3,8 +3,20 @@
 set -u
 set -o pipefail
 
-echo "=============== INSTALLING RUST ==============="
-sleep 5
+function yes_or_no {
+    while true; do
+        read "?$* [y/n]: " yn
+        case $yn in
+            [Yy]*)
+                return 0
+                ;;
+            [Nn]*)
+                echo "Cancelled"
+                return  1
+                ;;
+        esac
+    done
+}
 
 function check_shell() {
     echo "=============== checking shell ==============="
@@ -32,8 +44,14 @@ function _install() {
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --no-modify-path
 }
 
-check_shell
-check_install
-if [ $? -eq 1 ]; then
-    _install
+
+yes_or_no "Install rust?"
+if [ $? -eq 0 ]; then
+    echo "=============== INSTALLING RUST ==============="
+    sleep 5
+    check_shell
+    check_install
+    if [ $? -eq 1 ]; then
+        _install
+    fi
 fi

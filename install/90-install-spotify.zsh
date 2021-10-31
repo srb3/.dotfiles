@@ -3,6 +3,21 @@
 set -u
 set -o pipefail
 
+function yes_or_no {
+    while true; do
+        read "?$* [y/n]: " yn
+        case $yn in
+            [Yy]*)
+                return 0
+                ;;
+            [Nn]*)
+                echo "Cancelled"
+                return  1
+                ;;
+        esac
+    done
+}
+
 function aur_install() {
 	_target=$1
 	repo=$2
@@ -27,8 +42,9 @@ function aur_install() {
     fi
 }
 
-
-target="$HOME/apps"
-
-curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | gpg --import -
-aur_install $target spotify
+yes_or_no "Install spotify?"
+if [ $? -eq 0 ]; then
+    target="$HOME/apps"
+    curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | gpg --import -
+    aur_install $target spotify
+fi
