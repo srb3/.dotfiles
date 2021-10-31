@@ -14,7 +14,8 @@ fi
 
 # start some nice programs
 
-eval $(gnome-keyring-daemon --start)
+export QT_QPA_PLATFORMTHEME=qt5ct
+eval $(gnome-keyring-daemon --start --components=secrets,ssh)
 export SSH_AUTH_SOCK
 
 udiskie --smart-tray &
