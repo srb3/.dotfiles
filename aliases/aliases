@@ -3,6 +3,7 @@
 # cp
 alias cp='cp -iv'
 alias mv='mv -iv'
+alias rm='rm -iv'
 
 # grep
 alias grep='grep --color=auto'
