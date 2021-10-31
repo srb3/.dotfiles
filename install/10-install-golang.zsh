@@ -58,7 +58,7 @@ function download() {
 
 function extract() {
     echo "=============== extracting archive ==============="
-    tar -C $XDG_DATA_HOME -xzf go1.17.2.linux-amd64.tar.gz
+    tar -C $(dirname "$GOROOT") -xzf go1.17.2.linux-amd64.tar.gz
     cd ..
     rm -rf tmp
     echo "OKAY"
