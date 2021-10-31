@@ -1,0 +1,43 @@
+#!/bin/sh
+#
+# This script is lazy. It connects to the first external monitor available then
+# exits. If a more advanced setup is desired, then use xrandr manually. However,
+# this makes it easy to just plug in a monitor and start with the lid closed.
+
+thunderbolt="DP-1"
+hdmi="HDMI-1"
+internal="eDP-1"
+
+external_outputs="$hdmi $thunderbolt"
+
+function output_connected() {
+	# returns 0 if output is connected, 1 if not connected
+	output=$1
+	xrandr -q | grep -q "$output connected"
+}
+
+function use_external_mon() {
+	monitor=$1
+	xrandr --output $internal --off --output $monitor --auto
+}
+
+case $1 in
+dock)
+	for output in $external_outputs; do
+		if output_connected $output; then
+			use_external_mon $output
+			exit 0
+		fi
+	done
+	echo "No external monitor connected"
+	exit 1
+	;;
+undock)
+	for output in $external_outputs; do
+		if output_connected $output; then
+			xrandr --output $output --off
+		fi
+	done
+	xrandr --output $internal --auto
+	;;
+esac

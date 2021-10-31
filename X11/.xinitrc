@@ -2,11 +2,14 @@
 
 userresources=$HOME/.Xresources
 
+# try to start docked.
+# if no monitor is connected this command returns 1
+external-monitor dock
+
 # merge in defaults and keymaps
 
 if [ -f "$userresources" ]; then
-    xrdb -merge "$userresources"
-
+	xrdb -merge "$userresources"
 fi
 
 # start some nice programs
