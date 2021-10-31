@@ -60,7 +60,7 @@ make sure user is part of the *video* group.
 sudo usermod -aG video $USER
 ```
 
-#### set up Docker
+#### Set up Docker
 (must log out for group privileges to take effect)
 ```
 sudo systemctl enable --now
