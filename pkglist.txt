@@ -57,6 +57,7 @@ ntp
 pacman
 patch
 pkgconf
+postgresql-libs
 powerline
 pulseaudio
 pulseaudio-alsa
