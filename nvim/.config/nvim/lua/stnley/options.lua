@@ -10,6 +10,7 @@ opt.wildignore = opt.wildignore + {
 }
 
 opt.guicursor = ""
+opt.cursorline = true
 opt.hidden = true
 opt.hlsearch = false
 opt.incsearch = true
