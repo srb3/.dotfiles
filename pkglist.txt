@@ -87,6 +87,7 @@ udiskie
 unzip
 vim
 w3m
+whatmask
 which
 xclip
 xdg-user-dirs
