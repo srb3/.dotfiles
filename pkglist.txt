@@ -56,6 +56,7 @@ ntfs-3g
 ntp
 pacman
 patch
+perl-anyevent-i3
 pkgconf
 postgresql-libs
 powerline
