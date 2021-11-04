@@ -23,6 +23,7 @@ export STOW_FOLDERS=(alacritty
     themes
     tmux
     user-dirs
+    vim
     X11
     zsh
 )
@@ -123,3 +124,8 @@ export CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv"
 # gtk
 #-----------------------
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
+
+#-----------------------
+# vim
+#-----------------------
+export VIMINIT='let $MYVIMRC = !has("nvim") ? "$XDG_CONFIG_HOME/vim/vimrc" : "$XDG_CONFIG_HOME/nvim/init.vim" | so $MYVIMRC'
