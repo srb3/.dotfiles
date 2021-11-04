@@ -5,16 +5,23 @@ work_apps="alacritty firefox slack zoom"
 case $1 in
 start)
 	for app in $work_apps; do
+
 		if [ -n "$(pgrep -f $app)" ]; then
 			echo "$app already running"
 			continue
 		fi
+
+		if [ "$app" = "firefox" ]; then
+			$app -p work &
+			continue
+		fi
+
 		$app &
 	done
 	;;
 end)
 	for app in $work_apps; do
-		killall -SIGTERM $app
+		pkill -SIGTERM -f $app
 	done
 	;;
 esac
