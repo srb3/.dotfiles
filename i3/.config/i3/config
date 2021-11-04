@@ -6,7 +6,7 @@ for_window [class=".*"] border pixel 5
 gaps inner 10
 # gaps outer 10
 
-smart_gaps inverse_outer
+# smart_gaps inverse_outer
 
 
 
