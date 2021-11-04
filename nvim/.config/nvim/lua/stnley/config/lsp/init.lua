@@ -143,6 +143,20 @@ lspconfig.yamlls.setup {
   capabilities = capabilities,
 }
 
+lspconfig.eslint.setup {
+  on_init = custom_init,
+  on_attach = function(client)
+    vim.cmd [[
+            augroup Eslint
+                autocmd! * <buffer>
+                autocmd BufWritePre <buffer> EslintFixAll
+            augroup END
+        ]]
+    custom_attach(client)
+  end,
+  capabilities = capabilities,
+}
+
 local formatters = require "stnley.config.lsp.efm.formatters"
 lspconfig.efm.setup {
   on_attach = custom_attach,
