@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 #-----------------------
-# Environment variables
+# general
 #-----------------------
 export LANG=en_US.UTF-8
 export LESSHISTFILE=$XDG_CACHE_HOME/.lesshist
@@ -30,34 +30,10 @@ export STOW_FOLDERS=(alacritty
 
 
 #-----------------------
-# XDG
-#-----------------------
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_DATA_HOME=$XDG_CONFIG_HOME/local/share
-export XDG_CACHE_HOME=$XDG_CONFIG_HOME/cache
-
-
-#-----------------------
 # editor
 #-----------------------
 export EDITOR="vim"
 export VISUAL="$EDITOR"
-
-
-#-----------------------
-# zsh
-#-----------------------
-skip_global_compinit=1
-export ZPROMPT="$XDG_CONFIG_HOME/zsh/prompt"
-export HISTFILE="$XDG_CACHE_HOME/zsh/zhistory"
-export HISTSIZE=1000
-export SAVEHIST=1000
-
-
-#-----------------------
-# gpg
-#-----------------------
-export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 
 
 #-----------------------
@@ -70,31 +46,21 @@ export GOCACHE="$XDG_CACHE_HOME/go-build"
 
 
 #-----------------------
-# ruby
+# gpg
 #-----------------------
-export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 
 
 #-----------------------
-# rust
+# gtk
 #-----------------------
-export RUSTUP_HOME="$XDG_DATA_HOME/.rustup"
-export CARGO_HOME="$XDG_DATA_HOME/.cargo"
+export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 
 
 #-----------------------
-# python
+# nvidia driver specific
 #-----------------------
-export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
-export POETRY_HOME="$XDG_DATA_HOME/.poetry"
-export POETRY_BIN="$POETRY_HOME/bin"
-export POETRY_CACHE_DIR="$XDG_CACHE_HOME/pypoetry"
-
-
-#-----------------------
-# nvim
-#-----------------------
-export VIMCONFIG="$XDG_CONFIG_HOME/nvim"
+export CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv"
 
 
 #-----------------------
@@ -115,17 +81,46 @@ export PATH="$CARGO_HOME/bin:$PATH"
 
 
 #-----------------------
-# nvidia driver specific
+# python
 #-----------------------
-export CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv"
+export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
+export POETRY_HOME="$XDG_DATA_HOME/.poetry"
+export POETRY_BIN="$POETRY_HOME/bin"
+export POETRY_CACHE_DIR="$XDG_CACHE_HOME/pypoetry"
 
 
 #-----------------------
-# gtk
+# ruby
 #-----------------------
-export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
+export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+
+
+#-----------------------
+# rust
+#-----------------------
+export RUSTUP_HOME="$XDG_DATA_HOME/.rustup"
+export CARGO_HOME="$XDG_DATA_HOME/.cargo"
+
 
 #-----------------------
 # vim
 #-----------------------
-export VIMINIT='let $MYVIMRC = !has("nvim") ? "$XDG_CONFIG_HOME/vim/vimrc" : "$XDG_CONFIG_HOME/nvim/init.vim" | so $MYVIMRC'
+export VIMINIT='let $MYVIMRC = !has("nvim") ? "$XDG_CONFIG_HOME/vim/vimrc" : "$XDG_CONFIG_HOME/nvim/init.lua" | so $MYVIMRC'
+
+
+#-----------------------
+# XDG
+#-----------------------
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$XDG_CONFIG_HOME/local/share
+export XDG_CACHE_HOME=$XDG_CONFIG_HOME/cache
+
+
+#-----------------------
+# zsh
+#-----------------------
+skip_global_compinit=1
+export ZPROMPT="$XDG_CONFIG_HOME/zsh/prompt"
+export HISTFILE="$XDG_CACHE_HOME/zsh/zhistory"
+export HISTSIZE=1000
+export SAVEHIST=1000
