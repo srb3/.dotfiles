@@ -166,7 +166,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 exec --no-startup-id nextcloud &
 exec --no-startup-id blueman-applet
-exec --no-startup-id feh --no-fehbg --bg-center ~/personal/pictures/backgrounds/flower1.jpg
+exec_always --no-startup-id feh --no-fehbg --bg-center ~/personal/pictures/backgrounds/flower1.jpg
 exec keepassxc
 exec spotify
 
