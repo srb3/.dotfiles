@@ -23,9 +23,6 @@ alias lynx='lynx -vikeys -accept_all_cookies'
 alias vi='vim'
 [ -x "$(command -v nvim)" ] && alias vim="nvim"
 
-# pacman
-alias pacman='pacman --color auto'
-
 # sudo
 alias sudo="nocorrect sudo "
 
