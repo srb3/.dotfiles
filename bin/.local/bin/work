@@ -1,6 +1,6 @@
 #!/bin/sh
 
-work_apps="alacritty firefox slack zoom"
+work_apps="alacritty firefox slack zoom f5vpn"
 
 case $1 in
 start)
