@@ -71,72 +71,92 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["cmp-buffer"] = {
     loaded = true,
-    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/start/cmp-buffer"
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
-    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
   ["cmp-path"] = {
     loaded = true,
-    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/start/cmp-path"
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/start/cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path"
   },
   ["cmp-vsnip"] = {
     loaded = true,
-    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/start/cmp-vsnip"
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/start/cmp-vsnip",
+    url = "https://github.com/hrsh7th/cmp-vsnip"
   },
   fzf = {
     loaded = true,
-    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/start/fzf"
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/start/fzf",
+    url = "https://github.com/junegunn/fzf"
   },
   ["fzf.vim"] = {
     config = { "\27LJ\2\n2\0\0\2\0\3\0\0056\0\0\0009\0\1\0+\1\2\0=\1\2\0K\0\1\0\21fzf_buffers_jump\6g\bvim\0" },
     load_after = {},
     loaded = true,
     needs_bufread = false,
-    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/opt/fzf.vim"
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/opt/fzf.vim",
+    url = "https://github.com/junegunn/fzf.vim"
+  },
+  ["gitsigns.nvim"] = {
+    config = { "\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0" },
+    loaded = true,
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
   },
   ["lualine.nvim"] = {
     config = { "\27LJ\2\n]\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\foptions\1\0\0\1\0\1\ntheme\fdracula\nsetup\flualine\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
-    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/opt/lualine.nvim"
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/opt/lualine.nvim",
+    url = "https://github.com/hoob3rt/lualine.nvim"
   },
   ["nvim-cmp"] = {
     config = { "\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22stnley.config.cmp\frequire\0" },
     loaded = true,
-    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/start/nvim-cmp"
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/start/nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-colorizer.lua"] = {
     config = { "\27LJ\2\ng\0\0\3\0\6\0\n6\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\3\0009\0\4\0'\2\5\0B\0\2\1K\0\1\0\28ColorizerAttachToBuffer\bcmd\bvim\nsetup\14colorizer\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
-    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/opt/nvim-colorizer.lua"
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/opt/nvim-colorizer.lua",
+    url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
   ["nvim-lspconfig"] = {
     config = { "\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22stnley.config.lsp\frequire\0" },
     loaded = true,
-    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-treesitter"] = {
     loaded = true,
-    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/start/nvim-treesitter"
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
-    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/start/nvim-web-devicons"
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/start/packer.nvim"
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/start/packer.nvim",
+    url = "https://github.com/wbthomason/packer.nvim"
   },
   ["plenary.nvim"] = {
     loaded = false,
     needs_bufread = false,
     only_cond = false,
-    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/opt/plenary.nvim"
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/opt/plenary.nvim",
+    url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["telescope.nvim"] = {
     after = { "fzf.vim" },
@@ -145,37 +165,36 @@ _G.packer_plugins = {
   },
   vim = {
     loaded = true,
-    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/start/vim"
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/start/vim",
+    url = "https://github.com/dracula/vim"
   },
   ["vim-commentary"] = {
     loaded = false,
     needs_bufread = false,
     only_cond = false,
-    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/opt/vim-commentary"
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/opt/vim-commentary",
+    url = "https://github.com/tpope/vim-commentary"
   },
   ["vim-fugitive"] = {
     commands = { "Git", "Gstatus", "Gblame", "Gpush", "Gpull" },
     loaded = false,
     needs_bufread = true,
     only_cond = false,
-    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/opt/vim-fugitive"
-  },
-  ["vim-gitgutter"] = {
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/opt/vim-gitgutter"
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/opt/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-markdown"] = {
     config = { "\27LJ\2\n6\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\27stnley.config.markdown\frequire\0" },
     loaded = false,
     needs_bufread = true,
     only_cond = false,
-    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/opt/vim-markdown"
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/opt/vim-markdown",
+    url = "https://github.com/plasticboy/vim-markdown"
   },
   ["vim-vsnip"] = {
     loaded = true,
-    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/start/vim-vsnip"
+    path = "/home/stnley/.config/local/share/nvim/site/pack/packer/start/vim-vsnip",
+    url = "https://github.com/hrsh7th/vim-vsnip"
   }
 }
 
@@ -208,14 +227,18 @@ if not vim.g.packer_custom_loader_enabled then
   vim.g.packer_custom_loader_enabled = true
 end
 
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-try_loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22stnley.config.lsp\frequire\0", "config", "nvim-lspconfig")
-time([[Config for nvim-lspconfig]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
+time([[Config for gitsigns.nvim]], false)
 -- Config for: nvim-cmp
 time([[Config for nvim-cmp]], true)
 try_loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22stnley.config.cmp\frequire\0", "config", "nvim-cmp")
 time([[Config for nvim-cmp]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+try_loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22stnley.config.lsp\frequire\0", "config", "nvim-lspconfig")
+time([[Config for nvim-lspconfig]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
 try_loadstring("\27LJ\2\n7\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\28stnley.config.telescope\frequire\0", "config", "telescope.nvim")
@@ -246,7 +269,7 @@ vim.cmd [[au FileType markdown ++once lua require("packer.load")({'vim-markdown'
 time([[Defining lazy-load filetype autocommands]], false)
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufRead * ++once lua require("packer.load")({'vim-commentary', 'vim-gitgutter', 'lualine.nvim', 'nvim-colorizer.lua'}, { event = "BufRead *" }, _G.packer_plugins)]]
+vim.cmd [[au BufRead * ++once lua require("packer.load")({'nvim-colorizer.lua', 'lualine.nvim', 'vim-commentary'}, { event = "BufRead *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 vim.cmd [[augroup filetypedetect]]

@@ -61,9 +61,15 @@ return require("packer").startup {
     }
 
     -- use "junegunn/gv.vim"
+
     use {
-      "airblade/vim-gitgutter",
-      event = "BufRead",
+      "lewis6991/gitsigns.nvim",
+      requires = {
+        "nvim-lua/plenary.nvim",
+      },
+      config = function()
+        require("gitsigns").setup()
+      end,
     }
 
     use {

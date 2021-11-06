@@ -34,7 +34,6 @@ local custom_attach = function(client, bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, ...)
   end
   keymap("n", "<leader>gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-  keymap("n", "<leader>gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
   keymap("n", "<leader>gi", " <cmd>lua vim.lsp.buf.implementation()<CR>", opts)
   keymap("n", "<leader>gsh", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
   keymap("n", "<leader>grr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
