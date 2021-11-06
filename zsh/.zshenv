@@ -70,17 +70,6 @@ export NVM_DIR="$XDG_DATA_HOME/nvm"
 
 
 #-----------------------
-# PATH
-#-----------------------
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="$GEM_HOME/bin:$PATH"
-export PATH="$GOROOT/bin:$PATH"
-export PATH="$GOBIN:$PATH"
-export PATH="$POETRY_BIN:$PATH"
-export PATH="$CARGO_HOME/bin:$PATH"
-
-
-#-----------------------
 # python
 #-----------------------
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
@@ -124,3 +113,14 @@ export ZPROMPT="$XDG_CONFIG_HOME/zsh/prompt"
 export HISTFILE="$XDG_CACHE_HOME/zsh/zhistory"
 export HISTSIZE=1000
 export SAVEHIST=1000
+
+
+#-----------------------
+# PATH
+#-----------------------
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$GEM_HOME/bin:$PATH"
+export PATH="$GOROOT/bin:$PATH"
+export PATH="$GOBIN:$PATH"
+export PATH="$POETRY_BIN:$PATH"
+export PATH="$CARGO_HOME/bin:$PATH"
