@@ -25,6 +25,7 @@ export STOW_FOLDERS=(alacritty
     user-dirs
     vim
     X11
+    zathura
     zsh
 )
 
