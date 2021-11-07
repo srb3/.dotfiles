@@ -10,3 +10,6 @@
 [submodule "themes/.themes/Dracula"]
 	path = themes/.themes/Dracula
 	url = https://github.com/dracula/gtk.git
+[submodule "zathura/.config/zathura"]
+	path = zathura/.config/zathura
+	url = https://github.com/dracula/zathura.git
