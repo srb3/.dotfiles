@@ -99,6 +99,7 @@ xorg-xprop
 xorg-xrandr
 xorg-xrdb
 xterm
+zathura
 zip
 zoom
 zsh
