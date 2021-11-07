@@ -2,9 +2,6 @@
 # change-brightness
 # adapted from https://github.com/mohabaks
 
-# Arbitrary but unique message id
-msgId="69420"
-
 function get_brightness() {
 	light -G | cut -d "." -f1
 }
@@ -13,13 +10,12 @@ function send_notification() {
 	verb=$1
 	brightness=$(get_brightness)
 	echo $brightness here
-	# Send the notification
-	dunstify \
-		-a "change-brightness" \
-		-r "$msgId" \
+	notify-send \
 		-u low \
 		-t 1500 \
+		-h string:x-canonical-private-synchronous:change-brightness \
 		-h int:value:"$brightness" \
+		-h string:hlcolor:#8be9fd \
 		"Brightness $verb."
 }
 

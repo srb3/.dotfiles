@@ -2,9 +2,6 @@
 # change-volume
 # adapted from https://github.com/mohabaks
 
-# Arbitrary but unique message id
-msgId="696969"
-
 # return mute as boolean
 function get_mute() {
 	percentage=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '/Mute/ {print $2; exit}')
@@ -28,14 +25,13 @@ function send_notification {
 	verb=$1
 	volume=$(get_volume)
 	echo $volume
-	dunstify \
-		-a "change-volume" \
-		-r "$msgId" \
+	notify-send \
 		-u low \
 		-t 1500 \
+		-h string:x-canonical-private-synchronous:change-volume \
 		-h int:value:"$volume" \
+		-h string:hlcolor:#50fa7b \
 		"Volume $verb."
-
 }
 
 case $1 in
