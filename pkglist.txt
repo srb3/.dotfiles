@@ -8,7 +8,6 @@ blueman
 cmake
 dmenu
 docker
-dolphin
 dunst
 efibootmgr
 f5vpn
@@ -27,6 +26,7 @@ git
 gnome-keyring
 grep
 groff
+gvfs
 gzip
 htop
 i3-gaps
@@ -81,6 +81,7 @@ system76-firmware-daemon
 system76-power
 terraform
 texinfo
+thunar
 tmux
 tree
 tree-sitter
