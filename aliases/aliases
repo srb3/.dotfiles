@@ -5,6 +5,9 @@ alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -iv'
 
+# dotfiles
+alias dots='cd $DOTFILES'
+
 # grep
 alias grep='grep --color=auto'
 
