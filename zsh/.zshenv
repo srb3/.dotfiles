@@ -1,6 +1,14 @@
 #!/bin/zsh
 
 #-----------------------
+# XDG
+#-----------------------
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$XDG_CONFIG_HOME/local/share"
+export XDG_CACHE_HOME="$XDG_CONFIG_HOME/cache"
+
+
+#-----------------------
 # general
 #-----------------------
 export LANG=en_US.UTF-8
@@ -93,17 +101,17 @@ export CARGO_HOME="$XDG_DATA_HOME/.cargo"
 
 
 #-----------------------
+# terraform
+#-----------------------
+export TF_CLI_CONFIG_FILE="$XDG_CONFIG_HOME/terraform/terraformrc"
+
+
+#-----------------------
 # vim
 #-----------------------
 export VIMINIT='let $MYVIMRC = !has("nvim") ? "$XDG_CONFIG_HOME/vim/vimrc" : "$XDG_CONFIG_HOME/nvim/init.lua" | so $MYVIMRC'
 
 
-#-----------------------
-# XDG
-#-----------------------
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_DATA_HOME=$XDG_CONFIG_HOME/local/share
-export XDG_CACHE_HOME=$XDG_CONFIG_HOME/cache
 
 
 #-----------------------
