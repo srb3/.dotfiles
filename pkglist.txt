@@ -79,6 +79,7 @@ system76-driver
 system76-firmware
 system76-firmware-daemon
 system76-power
+terraform
 texinfo
 tmux
 tree
@@ -100,6 +101,7 @@ xorg-xrandr
 xorg-xrdb
 xterm
 zathura
+zathura-pdf-mupdf
 zip
 zoom
 zsh
