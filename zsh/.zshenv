@@ -28,6 +28,7 @@ export STOW_FOLDERS=(alacritty
     python
     ranger
     systemd
+    terraform
     themes
     tmux
     user-dirs
