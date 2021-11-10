@@ -8,6 +8,7 @@ blueman
 cmake
 dmenu
 docker
+docker-compose
 dunst
 efibootmgr
 f5vpn
