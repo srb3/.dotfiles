@@ -13,3 +13,6 @@
 [submodule "zathura/.config/zathura"]
 	path = zathura/.config/zathura
 	url = https://github.com/dracula/zathura.git
+[submodule "themes/.icons/Dracula"]
+	path = themes/.icons/Dracula
+	url = https://github.com/matheuuus/dracula-icons.git
