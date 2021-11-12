@@ -60,6 +60,7 @@ patch
 perl-anyevent-i3
 pkgconf
 postgresql-libs
+postman-bin
 powerline
 pulseaudio
 pulseaudio-alsa
