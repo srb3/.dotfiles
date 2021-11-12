@@ -116,6 +116,12 @@ export VIMINIT='let $MYVIMRC = !has("nvim") ? "$XDG_CONFIG_HOME/vim/vimrc" : "$X
 #-----------------------
 # zsh
 #-----------------------
+SSB_HOME="$XDG_DATA_HOME/zoom"
+
+
+#-----------------------
+# zsh
+#-----------------------
 skip_global_compinit=1
 export ZPROMPT="$XDG_CONFIG_HOME/zsh/prompt"
 export HISTFILE="$XDG_CACHE_HOME/zsh/zhistory"
