@@ -23,5 +23,6 @@ end)
 	for app in $work_apps; do
 		pkill -SIGTERM -f $app
 	done
+	rm -rf ~/.zoom
 	;;
 esac
