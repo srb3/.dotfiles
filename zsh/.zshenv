@@ -21,6 +21,7 @@ export STOW_FOLDERS=(alacritty
     fonts
     i3
     keepassxc
+    npm
     nvim
     pacman
     personal
@@ -77,6 +78,7 @@ export CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv"
 # nvm
 #-----------------------
 export NVM_DIR="$XDG_DATA_HOME/nvm"
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 
 
 #-----------------------
