@@ -82,6 +82,7 @@ system76-firmware
 system76-firmware-daemon
 system76-power
 terraform
+terraform-ls
 texinfo
 thunar
 tmux
