@@ -1,3 +1,4 @@
 #!/usr/bin/env sh
 
-SSB_HOME="$XDG_DATA_HOME"/zoom /usr/bin/zoom
+HOME="$XDG_DATA_HOME/zoom"
+SSB_HOME="$XDG_DATA_HOME/zoom" /usr/bin/zoom
