@@ -52,7 +52,7 @@ zstyle ':completion:*:*:*:*:messages' format '%F{purple}-- %d --%f'
 zstyle ':completion:*:*:*:*:warnings' format '%F{red}-- no matches found --%f'
 zstyle ':completion:*:*:*:*:default' list-colors ${(s.:.)LS_COLORS}
 
-autoload -Uz compinit; compinit -d $XDG_CACHE_HOME/.zcompdump
+autoload -Uz compinit; compinit -d $XDG_CACHE_HOME/zsh/zcompdump
 
 
 #-----------------------
