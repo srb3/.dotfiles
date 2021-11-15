@@ -19,7 +19,7 @@ fi
 #-----------------------
 # scripts
 #-----------------------
-for file ($XDG_CONFIG_HOME/zsh/scripts/*.zsh) source $file
+for file ($ZDOTDIR/scripts/*.zsh) source $file
 
 
 #-----------------------
@@ -59,7 +59,7 @@ autoload -Uz compinit; compinit -d $XDG_CACHE_HOME/.zcompdump
 # autosuggestions
 #-----------------------
 ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
-autosuggest="$XDG_CONFIG_HOME/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
+autosuggest="$ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 if [ -s $autosuggest ]; then
     source $autosuggest
