@@ -116,6 +116,12 @@ export VIMINIT='let $MYVIMRC = !has("nvim") ? "$XDG_CONFIG_HOME/vim/vimrc" : "$X
 
 
 #-----------------------
+# X11
+#-----------------------
+export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
+
+
+#-----------------------
 # zsh
 #-----------------------
 skip_global_compinit=1
