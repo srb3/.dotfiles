@@ -67,7 +67,6 @@ pulseaudio-alsa
 pulseaudio-bluetooth
 python
 python-pip
-qt5ct
 ranger
 ripgrep
 ruby
