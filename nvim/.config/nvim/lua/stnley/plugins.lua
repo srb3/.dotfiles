@@ -61,6 +61,13 @@ return require("packer").startup {
     }
 
     -- use "junegunn/gv.vim"
+    use {
+      "folke/zen-mode.nvim",
+      config = function()
+        require("zen-mode").setup()
+      end,
+      cmd = { "ZenMode" },
+    }
 
     use {
       "lewis6991/gitsigns.nvim",
