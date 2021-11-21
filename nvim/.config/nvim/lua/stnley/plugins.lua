@@ -64,9 +64,9 @@ return require("packer").startup {
     use {
       "folke/zen-mode.nvim",
       config = function()
-        require("zen-mode").setup()
+        require "stnley.config.zenmode"
       end,
-      cmd = { "ZenMode" },
+      event = "BufRead",
     }
 
     use {
