@@ -8,6 +8,9 @@ if [ -f "$userresources" ]; then
 	xrdb -merge "$userresources"
 fi
 
+# don't turn off the screen/monitor power
+xset s off -dpms
+
 # start some nice programs
 
 # detect current monitor setup
