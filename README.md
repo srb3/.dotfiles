@@ -60,9 +60,9 @@ make sure user is part of the *video* group.
 sudo usermod -aG video $USER
 ```
 
-#### Laptop backlight control
-*light* should work out of the box (installed via pacman). If it is not working,
-make sure user is part of the *video* group.
+#### Monitor layout control
+*autorandr* will load the correct layout when X server is started. To listen for
+device events and apply appropriate layout, enable the systemd service.
 ```
 sudo systemctl enable --now autorandr.service
 ```
