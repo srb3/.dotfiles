@@ -1,6 +1,7 @@
 alacritty
 autoconf
 automake
+autorandr
 base
 binutils
 bison
@@ -53,6 +54,7 @@ network-manager-applet
 networkmanager
 nextcloud-client
 ninja
+noto-fonts-emoji
 ntfs-3g
 ntp
 pacman
