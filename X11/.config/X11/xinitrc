@@ -2,10 +2,6 @@
 
 userresources=$XDG_CONFIG_HOME/X11/xresources
 
-# try to start docked.
-# if no monitor is connected this command returns 1
-external-monitor dock
-
 # merge in defaults and keymaps
 
 if [ -f "$userresources" ]; then
@@ -13,6 +9,9 @@ if [ -f "$userresources" ]; then
 fi
 
 # start some nice programs
+
+# detect current monitor setup
+autorandr --change
 
 export QT_QPA_PLATFORMTHEME=qt5ct
 eval $(gnome-keyring-daemon --start --components=secrets,ssh)

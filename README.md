@@ -60,6 +60,13 @@ make sure user is part of the *video* group.
 sudo usermod -aG video $USER
 ```
 
+#### Laptop backlight control
+*light* should work out of the box (installed via pacman). If it is not working,
+make sure user is part of the *video* group.
+```
+sudo systemctl enable --now autorandr.service
+```
+
 #### Set up Docker
 (must log out for group privileges to take effect)
 ```

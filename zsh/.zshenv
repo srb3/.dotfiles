@@ -15,6 +15,7 @@ export LANG=en_US.UTF-8
 export LESSHISTFILE=$XDG_CACHE_HOME/.lesshist
 export DOTFILES=$HOME/.dotfiles
 export STOW_FOLDERS=(alacritty
+    autorandr
     bin
     colorls
     dunst

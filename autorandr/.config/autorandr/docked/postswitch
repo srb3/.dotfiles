@@ -1,0 +1,3 @@
+#! /bin/sh
+
+xrdb -merge "$XDG_CONFIG_HOME/X11/4k-xresources"
