@@ -96,6 +96,7 @@ ttf-dejavu
 udiskie
 unzip
 vim
+vlc
 w3m
 whatmask
 which
